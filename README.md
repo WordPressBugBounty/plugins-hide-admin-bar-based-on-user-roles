@@ -1,0 +1,1 @@
+# plugins-hide-admin-bar-based-on-user-roles
