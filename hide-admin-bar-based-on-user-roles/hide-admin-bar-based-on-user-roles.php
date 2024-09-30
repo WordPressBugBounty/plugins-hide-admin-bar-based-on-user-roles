@@ -12,7 +12,7 @@
  * Plugin Name:       Hide Admin Bar Based on User Roles
  * Plugin URI:        https://wordpress.org/plugins/hide-admin-bar-based-on-user-roles/
  * Description:       This plugin is very useful to hide admin bar based on selected user roles and user capabilities.
- * Version:           3.8.3
+ * Version:           3.9.0
  * Author:            Ankit Panchal
  * Author URI:        https://wpankit.com/
  * License:           GPL-2.0+
@@ -46,7 +46,7 @@ if ( ! defined( 'WPINC' ) ) {
  * Start at version 1.7.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'HIDE_ADMIN_BAR_BASED_ON_USER_ROLES', '3.8.3' );
+define( 'HIDE_ADMIN_BAR_BASED_ON_USER_ROLES', '3.9.0' );
 
 /**
  * The code that runs during plugin activation.
@@ -91,3 +91,44 @@ function hab_run_hide_admin_bar_based_on_user_roles() {
 
 }
 hab_run_hide_admin_bar_based_on_user_roles();
+
+
+// Function to display the dismissible advertisement bar
+function display_custom_advertisement_habou() {
+    // Check if the user has dismissed the ad already
+    if (get_user_meta(get_current_user_id(), 'dismiss_custom_ad_habou', true)) {
+        return; // Don't show the ad if it has been dismissed
+    }
+	if( isset($_GET['page']) && 'hide-admin-bar-settings' === $_GET['page'] ){
+		echo '<div class="notice notice-info is-dismissible" id="custom-advertisement-bar-dbefm">';
+		echo '<p><strong>Replace 25+ Plugins with Just One!</strong> Try UltimaKit for WP – the all-in-one WordPress toolkit for performance, security, and customization. <a href="https://wpultimakit.com/features/" target="_blank">Learn more</a> <strong></strong></p>';
+		echo '</div>';
+	}
+}
+add_action('admin_notices', 'display_custom_advertisement_habou');
+
+// Function to store the dismissed state using AJAX
+function custom_advertisement_dismiss_habou() {
+    update_user_meta(get_current_user_id(), 'dismiss_custom_ad_habou', true);
+}
+add_action('wp_ajax_custom_advertisement_dismiss_habou', 'custom_advertisement_dismiss_habou');
+
+// Enqueue the script to handle the dismiss action via AJAX
+function custom_advertisement_enqueue_script_habou() {
+    ?>
+    <script type="text/javascript">
+        jQuery(document).ready(function($) {
+            // When the dismiss button is clicked, trigger the AJAX call
+            $(document).on('click', '.notice.is-dismissible', function() {
+                var adBar = $(this).attr('id');
+                if (adBar === 'custom-advertisement-bar-dbefm') {
+                    $.post(ajaxurl, {
+                        action: 'custom_advertisement_dismiss_habou'
+                    });
+                }
+            });
+        });
+    </script>
+    <?php
+}
+add_action('admin_footer', 'custom_advertisement_enqueue_script_habou');
