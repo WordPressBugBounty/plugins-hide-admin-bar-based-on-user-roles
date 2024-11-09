@@ -1,0 +1,23 @@
+# Exclude unnecessary files from deployment
+
+# Composer files
+composer.json
+composer.lock
+
+# Node.js files and build directories
+node_modules/
+package.json
+package-lock.json
+webpack.config.js
+
+# Development and configuration files
+.git/
+.gitignore
+.github/
+.vscode/
+distignore
+README.md
+CHANGELOG.md
+
+# Any other non-essential files or directories
+tests/
