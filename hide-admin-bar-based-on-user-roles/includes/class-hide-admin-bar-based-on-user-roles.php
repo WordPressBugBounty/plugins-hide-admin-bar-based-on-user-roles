@@ -159,9 +159,9 @@ class hab_Hide_Admin_Bar_Based_On_User_Roles {
 		$this->loader->add_action( 'admin_menu', $plugin_admin, 'generate_admin_menu_page' );
 		$this->loader->add_action( 'wp_ajax_save_user_roles', $plugin_admin, 'save_user_roles' );
 		$this->loader->add_action( 'upgrader_process_complete', $plugin_admin, 'upgrader_process_complete' );
+		$this->loader->add_action( 'wp_ajax_check_plugin_status', $plugin_admin, 'check_plugin_status' );
+		$this->loader->add_action( 'wp_ajax_silent_install_plugin', $plugin_admin, 'handle_silent_install_plugin' );
 
-		 
-		
 		
 	}
 
