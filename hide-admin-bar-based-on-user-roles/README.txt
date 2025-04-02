@@ -7,7 +7,7 @@ Author URI: https://wpankit.com
 Requires at least: 5.5
 Tested up to: 6.7
 Requires PHP: 5.6
-Stable tag: 5.0.0
+Stable tag: 5.2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -68,6 +68,10 @@ Yes, This plugin hides admin bar for guest users as well.
 
 
 == Changelog ==
+
+= 5.2.0 - 02-04-2025 =
+* I18N Issues Fixes 
+* Compatibility tested & Tested with the latest WordPress version.
 
 = 5.0.0 - 16-02-2025 =
 * Admin ui updated.

@@ -3,7 +3,7 @@
 /**
  * The admin-specific functionality of the plugin.
  *
- * @link       https://iamankitpanchal.com/
+ * @link       https://wpankit.com/
  * @since      1.7.0
  *
  * @package    hab_Hide_Admin_Bar_Based_On_User_Roles
@@ -131,14 +131,14 @@ class hab_Hide_Admin_Bar_Based_On_User_Roles_Admin {
 			wp_localize_script('silent-installer', 'silent_installer_vars', array(
 				'ajaxurl' => admin_url('admin-ajax.php'),
 				'nonce' => wp_create_nonce('silent_installer'),
-				'installing_text' => __('Installing...', 'ultimakit'),
-				'activated_text' => __('Installed & Activated!', 'ultimakit'),
-				'error_text' => __('Installation Failed', 'ultimakit'),
-				'already_installed' => __('Already Installed & Active', 'ultimakit'),
-				'checking_status' => __('Checking plugin status...', 'ultimakit'),
-				'downloading' => __('Downloading plugin...', 'ultimakit'),
-				'installing' => __('Installing plugin...', 'ultimakit'),
-				'activating' => __('Activating plugin...', 'ultimakit')
+				'installing_text' => __('Installing...', 'hide-admin-bar-based-on-user-roles'),
+				'activated_text' => __('Installed & Activated!', 'hide-admin-bar-based-on-user-roles'),
+				'error_text' => __('Installation Failed', 'hide-admin-bar-based-on-user-roles'),
+				'already_installed' => __('Already Installed & Active', 'hide-admin-bar-based-on-user-roles'),
+				'checking_status' => __('Checking plugin status...', 'hide-admin-bar-based-on-user-roles'),
+				'downloading' => __('Downloading plugin...', 'hide-admin-bar-based-on-user-roles'),
+				'installing' => __('Installing plugin...', 'hide-admin-bar-based-on-user-roles'),
+				'activating' => __('Activating plugin...', 'hide-admin-bar-based-on-user-roles')
 			));
 
 			wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/hide-admin-bar-based-on-user-roles-admin.js', array( 'jquery' ), $this->version, false );
@@ -178,12 +178,12 @@ class hab_Hide_Admin_Bar_Based_On_User_Roles_Admin {
 		<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #6610F2;">
 			<div class="container-fluid p-2">
 				<a class="navbar-brand" href="#">
-					<img src="<?php echo esc_url( plugin_dir_url( __FILE__ ).'images/hide-admin-bar-logo.svg' ); ?>"  class="d-inline-block align-top" alt="ultimakit-for-wp-logo" width="225px">
-					<div class="wpuk-version-info"><?php echo esc_html_e( 'Current version:', 'ultimakit-for-wp' ); ?>5.0.0</div>
+					<img src="<?php echo esc_url( plugin_dir_url( __FILE__ ).'images/hide-admin-bar-logo.svg' ); ?>"  class="d-inline-block align-top" alt="hide-admin-bar-based-on-user-roles-logo" width="225px">
+					<div class="wpuk-version-info"><?php esc_html_e( 'Current version: ', 'hide-admin-bar-based-on-user-roles' ); ?><?php echo HIDE_ADMIN_BAR_BASED_ON_USER_ROLES; ?></div>
 				</a>
 				
 				<div class="navbar-nav ml-auto">
-					<a class="nav-item nav-link" target="_blank" href="https://wordpress.org/support/plugin/hide-admin-bar-based-on-user-roles/reviews/#new-post" style="color: #ffffff; margin-right: 20px"><?php echo esc_html_e( 'Leave Feedback', 'ultimakit-for-wp' ); ?></a>
+					<a class="nav-item nav-link" target="_blank" href="https://wordpress.org/support/plugin/hide-admin-bar-based-on-user-roles/reviews/#new-post" style="color: #ffffff; margin-right: 20px"><?php esc_html_e( 'Leave Feedback', 'hide-admin-bar-based-on-user-roles' ); ?></a>
 				</div>
 			</div>
 		</nav>
@@ -198,15 +198,15 @@ class hab_Hide_Admin_Bar_Based_On_User_Roles_Admin {
 					<!-- Nav tabs -->
 					<ul class="nav nav-tabs" id="wpukTabs" role="tablist">
 						<li class="nav-item" role="presentation">
-							<a class="nav-link <?php echo $menu_active_class; ?>" id="hab-modules-tab" data-bs-toggle="tab" href="#hab-modules" role="tab" aria-controls="hab-modules" aria-selected="true"><?php echo esc_html_e( 'Settings', 'ultimakit-for-wp' ); ?></a>
+							<a class="nav-link <?php echo $menu_active_class; ?>" id="hab-modules-tab" data-bs-toggle="tab" href="#hab-modules" role="tab" aria-controls="hab-modules" aria-selected="true"><?php esc_html_e( 'Settings', 'hide-admin-bar-based-on-user-roles' ); ?></a>
 						</li>
 
 						<li class="nav-item" role="presentation">
-							<a class="nav-link" id="tools-tab" data-bs-toggle="tab" style="font-weight: 600; text-decoration: underline;" href="#tools" role="tab" aria-controls="tools" aria-selected="true"><?php echo esc_html_e( 'Powerful WordPress Tools', 'hide-admin-bar-based-on-user-roles' ); ?></a>
+							<a class="nav-link" id="tools-tab" data-bs-toggle="tab" style="font-weight: 600; text-decoration: underline;" href="#tools" role="tab" aria-controls="tools" aria-selected="true"><?php esc_html_e( 'Powerful WordPress Tools', 'hide-admin-bar-based-on-user-roles' ); ?></a>
 						</li>
 
 						<li class="nav-item" role="presentation">
-							<a class="nav-link" href="https://wordpress.org/support/plugin/hide-admin-bar-based-on-user-roles/" target="_blank"><?php echo esc_html_e( 'Help', 'ultimakit-for-wp' ); ?></a>
+							<a class="nav-link" href="https://wordpress.org/support/plugin/hide-admin-bar-based-on-user-roles/" target="_blank"><?php esc_html_e( 'Help', 'hide-admin-bar-based-on-user-roles' ); ?></a>
 						</li>
 					</ul>
 					<!-- Tab panes -->
@@ -217,7 +217,7 @@ class hab_Hide_Admin_Bar_Based_On_User_Roles_Admin {
 									<div class="row">
 										<div class="col-md-12">
 											<div class="form-group row">
-												<label class="col-sm-6 col-form-label"><?php echo __( 'Hide Admin Bar for All Users', 'hide-admin-bar-based-on-user-roles' ); ?></label>
+												<label class="col-sm-6 col-form-label"><?php esc_html_e( 'Hide Admin Bar for All Users', 'hide-admin-bar-based-on-user-roles' ); ?></label>
 												<div class="col-sm-6">
 													<?php
 													$disableForAll = ( isset( $settings["hab_disableforall"] ) ) ? $settings["hab_disableforall"] : "";
@@ -234,7 +234,7 @@ class hab_Hide_Admin_Bar_Based_On_User_Roles_Admin {
 										<div class="row mt-3">
 											<div class="col-md-12">
 												<div class="form-group row">
-													<label class="col-sm-6 col-form-label"><?php echo __( 'Hide Admin Bar for All Guests Users', 'hide-admin-bar-based-on-user-roles' ); ?></label>
+													<label class="col-sm-6 col-form-label"><?php esc_html_e( 'Hide Admin Bar for All Guests Users', 'hide-admin-bar-based-on-user-roles' ); ?></label>
 													<div class="col-sm-6">
 														<?php
 														$disableForAllGuests = ( isset( $settings["hab_disableforallGuests"] ) ) ? $settings["hab_disableforallGuests"] : "";
@@ -251,8 +251,8 @@ class hab_Hide_Admin_Bar_Based_On_User_Roles_Admin {
 										<div class="row mt-3">
 											<div class="col-md-12">
 												<div class="form-group row">
-													<label class="col-sm-6 col-form-label"><?php echo __( 'User Roles', 'hide-admin-bar-based-on-user-roles' ); ?>
-														<br/><br/><?php echo __( 'Hide admin bar for selected user roles.', 'hide-admin-bar-based-on-user-roles' ); ?>
+													<label class="col-sm-6 col-form-label"><?php esc_html_e( 'User Roles', 'hide-admin-bar-based-on-user-roles' ); ?>
+														<br/><br/><?php esc_html_e( 'Hide admin bar for selected user roles.', 'hide-admin-bar-based-on-user-roles' ); ?>
 													</label>
 													<div class="col-sm-6">
 														<?php
@@ -281,9 +281,9 @@ class hab_Hide_Admin_Bar_Based_On_User_Roles_Admin {
 										<div class="row mt-3">
 											<div class="col-md-12">
 												<div class="form-group row">
-													<label class="col-sm-6 col-form-label"><?php echo __( 'Capabilities Blacklist', 'hide-admin-bar-based-on-user-roles' );
+													<label class="col-sm-6 col-form-label"><?php esc_html_e( 'Capabilities Blacklist', 'hide-admin-bar-based-on-user-roles' );
 														echo '<br />';
-														echo __( 'Hide admin bar for selected user capabilities', 'hide-admin-bar-based-on-user-roles' ); ?></label>
+														esc_html_e( 'Hide admin bar for selected user capabilities', 'hide-admin-bar-based-on-user-roles' ); ?></label>
 													<div class="col-sm-6">
 														<?php
 														$caps = ( isset( $settings["hab_capabilities"] ) ) ? $settings["hab_capabilities"] : "";
@@ -300,11 +300,11 @@ class hab_Hide_Admin_Bar_Based_On_User_Roles_Admin {
 									<div class="row mt-3">
 										<div class="col-md-12">
 											<button type="button" class="btn btn-primary btn-fw"
-													id="submit_roles"><?php echo __( "Save Changes", 'hide-admin-bar-based-on-user-roles' ); ?></button>
+													id="submit_roles"><?php esc_html_e( "Save Changes", 'hide-admin-bar-based-on-user-roles' ); ?></button>
 										</div>
 										<div class="col-md-12">
 											<br/>
-											<p><?php echo __( "You can reset plugin settings by visiting this url without login to admin panel. Keep it safe.", 'hide-admin-bar-based-on-user-roles' ); ?>
+											<p><?php esc_html_e( "You can reset plugin settings by visiting this url without login to admin panel. Keep it safe.", 'hide-admin-bar-based-on-user-roles' ); ?>
 												<br/><a href="<?php echo admin_url() . "options-general.php?page=hide-admin-bar-settings&reset_plugin=" . $hab_reset_key; ?>"
 														target="_blank"><?php echo admin_url() . "options-general.php?page=hide-admin-bar-settings&reset_plugin=" . $hab_reset_key; ?></a>
 											</p>
@@ -317,7 +317,7 @@ class hab_Hide_Admin_Bar_Based_On_User_Roles_Admin {
 											'width': '100%',
 											'height': '75%',
 											'interactive': true,
-											'defaultText': 'Add More',
+											'defaultText': '<?php _e('Add More', 'hide-admin-bar-based-on-user-roles'); ?>',
 											'removeWithBackspace': true,
 											'minChars': 0,
 											'maxChars': 20, // if not provided there is no limit
@@ -336,27 +336,27 @@ class hab_Hide_Admin_Bar_Based_On_User_Roles_Admin {
 											<div class="row g-4 w-100 mx-0">
 												<div class="col-lg-8">
 													<div class="feature-content">
-														<span class="badge bg-primary-subtle text-primary mb-2">170+ Powerful Modules</span>
-														<h3 class="text-primary mb-3">UltimaKit For WP – All-in-One WordPress Toolkit for SEO, Customization, and Performance</h3>
+														<span class="badge bg-primary-subtle text-primary mb-2"><?php esc_html_e( '192+ Powerful Modules', 'hide-admin-bar-based-on-user-roles' ); ?></span>
+														<h3 class="text-primary mb-3"><?php esc_html_e( 'UltimaKit For WP – All-in-One WordPress Toolkit for SEO, Customization, and Performance', 'hide-admin-bar-based-on-user-roles' ); ?></h3>
 														<div class="features-list mb-4">
 															<p class="text-secondary mb-3">
-																Simplify your WordPress management with UltimaKit – the all-in-one toolkit that replaces 25+ plugins. Popular modules include:
+																<?php esc_html_e( 'Simplify your WordPress management with UltimaKit – the all-in-one toolkit that replaces 25+ plugins. Popular modules include:', 'hide-admin-bar-based-on-user-roles' ); ?>
 															</p>
 															<div class="module-highlights">
-																<span class="module-tag">GDPR Compliance</span>
-																<span class="module-tag">Hide Admin Bar</span>
-																<span class="module-tag">Custom Post Types</span>
-																<span class="module-tag">SEO Tools</span>
-																<span class="module-tag">Post & Page Order</span>
-																<span class="module-tag">Admin Activity Logger</span>
-																<span class="module-tag">Gravity Forms: Address Autocomplete</span>
-																<span class="module-tag">Gravity Forms: AI Analysis</span>
-																<span class="module-tag">Gravity Forms: Form Analytics(Most advanced analytics)</span>
-																<span class="module-tag">WooCommerce Modules</span>
+																<span class="module-tag"><?php esc_html_e( 'GDPR Compliance', 'hide-admin-bar-based-on-user-roles' ); ?></span>
+																<span class="module-tag"><?php esc_html_e( 'Hide Admin Bar', 'hide-admin-bar-based-on-user-roles' ); ?></span>
+																<span class="module-tag"><?php esc_html_e( 'Custom Post Types', 'hide-admin-bar-based-on-user-roles' ); ?></span>
+																<span class="module-tag"><?php esc_html_e( 'SEO Tools', 'hide-admin-bar-based-on-user-roles' ); ?></span>
+																<span class="module-tag"><?php esc_html_e( 'Post &amp; Page Order', 'hide-admin-bar-based-on-user-roles' ); ?></span>
+																<span class="module-tag"><?php esc_html_e( 'Admin Activity Logger', 'hide-admin-bar-based-on-user-roles' ); ?></span>
+																<span class="module-tag"><?php esc_html_e( 'Gravity Forms: Address Autocomplete', 'hide-admin-bar-based-on-user-roles' ); ?></span>
+																<span class="module-tag"><?php esc_html_e( 'Gravity Forms: AI Analysis', 'hide-admin-bar-based-on-user-roles' ); ?></span>
+																<span class="module-tag"><?php esc_html_e( 'Gravity Forms: Form Analytics(Most advanced analytics)', 'hide-admin-bar-based-on-user-roles' ); ?></span>
+																<span class="module-tag"><?php esc_html_e( 'WooCommerce Modules', 'hide-admin-bar-based-on-user-roles' ); ?></span>
 															</div>
 														</div>
 														<button href="#" data-plugin-slug="ultimakit-for-wp" class="install-plugin btn btn-primary btn-lg">
-															Install UltimaKit Now
+															<?php esc_html_e( 'Install UltimaKit Now', 'hide-admin-bar-based-on-user-roles' ); ?>
 														</button>
 
 														<div class="loader-wrapper">
@@ -366,44 +366,40 @@ class hab_Hide_Admin_Bar_Based_On_User_Roles_Admin {
 														<div class="progress-steps">
 															<div class="step" data-step="check">
 																<i class="dashicons dashicons-search"></i>
-																Checking plugin status...
+																<?php esc_html_e( 'Checking plugin status...', 'hide-admin-bar-based-on-user-roles' ); ?>
 															</div>
 															<div class="step" data-step="download">
 																<i class="dashicons dashicons-download"></i>
-																Downloading plugin...
+																<?php esc_html_e( 'Downloading plugin...', 'hide-admin-bar-based-on-user-roles' ); ?>
 															</div>
 															<div class="step" data-step="install">
 																<i class="dashicons dashicons-admin-plugins"></i>
-																Installing plugin...
+																<?php esc_html_e( 'Installing plugin...', 'hide-admin-bar-based-on-user-roles' ); ?>
 															</div>
 															<div class="step" data-step="activate">
 																<i class="dashicons dashicons-yes"></i>
-																Activating plugin...
+																<?php esc_html_e( 'Activating plugin...', 'hide-admin-bar-based-on-user-roles' ); ?>
 															</div>
 														</div>
 														
 														<a href="https://wpultimakit.com" target="_blank" class="btn btn-primary btn-lg">
-															Learn More About UltimaKit
+															<?php esc_html_e( 'Learn More About UltimaKit', 'hide-admin-bar-based-on-user-roles' ); ?>
 														</a>
 													</div>
 												</div>
 												<div class="col-lg-4">
 													<div class="stats-container">
 														<div class="stat-item">
-															<span class="stat-number">25+</span>
-															<span class="stat-label">Plugins Replaced</span>
+															<?php printf(esc_html__( '%1$s25+%2$s %3$sPlugins Replaced%2$s', 'hide-admin-bar-based-on-user-roles' ),'<span class="stat-number">','</span>','<span class="stat-label">'); ?>
 														</div>
 														<div class="stat-item">
-															<span class="stat-number">170+</span>
-															<span class="stat-label">Powerful Modules</span>
+															<?php printf(esc_html__( '%1$s192+%2$s %3$sPowerful Modules%2$s', 'hide-admin-bar-based-on-user-roles' ),'<span class="stat-number">','</span>','<span class="stat-label">'); ?>
 														</div>
 														<div class="stat-item">
-															<span class="stat-number">20+</span>
-															<span class="stat-label">WooCommerce Modules</span>
+															<?php printf(esc_html__( '%1$s20+%2$s %3$sWooCommerce Modules%2$s', 'hide-admin-bar-based-on-user-roles' ),'<span class="stat-number">','</span>','<span class="stat-label">'); ?>
 														</div>
 														<div class="stat-item">
-															<span class="stat-number">15+</span>
-															<span class="stat-label">Gravity Forms Modules</span>
+															<?php printf(esc_html__( '%1$s15+%2$s %3$sGravity Forms Modules%2$s', 'hide-admin-bar-based-on-user-roles' ),'<span class="stat-number">','</span>','<span class="stat-label">'); ?>
 														</div>
 													</div>
 												</div>
@@ -418,25 +414,25 @@ class hab_Hide_Admin_Bar_Based_On_User_Roles_Admin {
 											<div class="row g-4 w-100 mx-0">
 												<div class="col-lg-8">
 													<div class="feature-content">
-														<span class="badge bg-primary-subtle text-primary mb-2">Smart Note-Taking for WordPress</span>
-														<h3 class="text-primary mb-3">Smart Note-Taking for WordPress</h3>
+														<span class="badge bg-primary-subtle text-primary mb-2"><?php esc_html_e( 'Smart Note-Taking for WordPress', 'hide-admin-bar-based-on-user-roles' ); ?></span>
+														<h3 class="text-primary mb-3"><?php esc_html_e( 'Smart Note-Taking for WordPress', 'hide-admin-bar-based-on-user-roles' ); ?></h3>
 														<div class="features-list mb-4">
 															<p class="text-secondary mb-3">
-															Enhance your WordPress experience with intelligent note-taking directly in your dashboard. Perfect for content creators, developers, and site managers!
+															<?php esc_html_e( 'Enhance your WordPress experience with intelligent note-taking directly in your dashboard. Perfect for content creators, developers, and site managers!', 'hide-admin-bar-based-on-user-roles' ); ?>
 															</p>
 															<div class="module-highlights">
-																<span class="module-tag">Quick Notes Dashboard</span>
-																<span class="module-tag">Rich Text Editor</span>
-																<span class="module-tag">Task Management</span>
-																<span class="module-tag">Post Draft Notes</span>
-																<span class="module-tag">Team Collaboration</span>
-																<span class="module-tag">Custom Categories</span>
-																<span class="module-tag">Markdown Support</span>
-																<span class="module-tag">File Attachments</span>
+																<span class="module-tag"><?php esc_html_e( 'Quick Notes Dashboard', 'hide-admin-bar-based-on-user-roles' ); ?></span>
+																<span class="module-tag"><?php esc_html_e( 'Rich Text Editor', 'hide-admin-bar-based-on-user-roles' ); ?></span>
+																<span class="module-tag"><?php esc_html_e( 'Task Management', 'hide-admin-bar-based-on-user-roles' ); ?></span>
+																<span class="module-tag"><?php esc_html_e( 'Post Draft Notes', 'hide-admin-bar-based-on-user-roles' ); ?></span>
+																<span class="module-tag"><?php esc_html_e( 'Team Collaboration', 'hide-admin-bar-based-on-user-roles' ); ?></span>
+																<span class="module-tag"><?php esc_html_e( 'Custom Categories', 'hide-admin-bar-based-on-user-roles' ); ?></span>
+																<span class="module-tag"><?php esc_html_e( 'Markdown Support', 'hide-admin-bar-based-on-user-roles' ); ?></span>
+																<span class="module-tag"><?php esc_html_e( 'File Attachments', 'hide-admin-bar-based-on-user-roles' ); ?></span>
 															</div>
 														</div>
 														<button href="#" data-plugin-slug="noteflow" class="install-plugin btn btn-primary btn-lg">
-															Install Noteflow Now
+															<?php esc_html_e( 'Install Noteflow Now', 'hide-admin-bar-based-on-user-roles' ); ?>
 														</button>
 
 														<div class="loader-wrapper">
@@ -446,40 +442,37 @@ class hab_Hide_Admin_Bar_Based_On_User_Roles_Admin {
 														<div class="progress-steps">
 															<div class="step" data-step="check">
 																<i class="dashicons dashicons-search"></i>
-																Checking plugin status...
+																<?php esc_html_e( 'Checking plugin status...', 'hide-admin-bar-based-on-user-roles' ); ?>
 															</div>
 															<div class="step" data-step="download">
 																<i class="dashicons dashicons-download"></i>
-																Downloading plugin...
+																<?php esc_html_e( 'Downloading plugin...', 'hide-admin-bar-based-on-user-roles' ); ?>
 															</div>
 															<div class="step" data-step="install">
 																<i class="dashicons dashicons-admin-plugins"></i>
-																Installing plugin...
+																<?php esc_html_e( 'Installing plugin...', 'hide-admin-bar-based-on-user-roles' ); ?>
 															</div>
 															<div class="step" data-step="activate">
 																<i class="dashicons dashicons-yes"></i>
-																Activating plugin...
+																<?php esc_html_e( 'Activating plugin...', 'hide-admin-bar-based-on-user-roles' ); ?>
 															</div>
 														</div>
 
 														<a href="https://wordpress.org/plugins/noteflow/" target="_blank" class="btn btn-primary btn-lg">
-															Learn More About Noteflow
+															<?php esc_html_e( 'Learn More About Noteflow', 'hide-admin-bar-based-on-user-roles' ); ?>
 														</a>
 													</div>
 												</div>
 												<div class="col-lg-4">
 													<div class="stats-container">
 														<div class="stat-item">
-															<span class="stat-number">100%</span>
-															<span class="stat-label">Free Forever</span>
+															<?php printf(esc_html__( '%1$s100%%%2$s %3$sFree Forever%2$s', 'hide-admin-bar-based-on-user-roles' ),'<span class="stat-number">','</span>','<span class="stat-label">'); ?>
 														</div>
 														<div class="stat-item">
-															<span class="stat-number">5★</span>
-															<span class="stat-label">User Rating</span>
+															<?php printf(esc_html__( '%1$s5★%2$s %3$sUser Rating%2$s', 'hide-admin-bar-based-on-user-roles' ),'<span class="stat-number">','</span>','<span class="stat-label">'); ?>
 														</div>
 														<div class="stat-item">
-															<span class="stat-number">1-Click</span>
-															<span class="stat-label">Quick Notes</span>
+															<?php printf(esc_html__( '%1$s1-Click%2$s %3$sQuick Notes%2$s', 'hide-admin-bar-based-on-user-roles' ),'<span class="stat-number">','</span>','<span class="stat-label">'); ?>
 														</div>
 													</div>
 												</div>
