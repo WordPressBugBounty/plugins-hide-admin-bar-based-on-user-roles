@@ -3,7 +3,7 @@
 /**
  * Register all actions and filters for the plugin
  *
- * @link       https://wpankit.com/
+ * @link       https://creovity.agency/
  * @since      1.7.0
  *
  * @package    hab_Hide_Admin_Bar_Based_On_User_Roles
@@ -19,7 +19,7 @@
  *
  * @package    hab_Hide_Admin_Bar_Based_On_User_Roles
  * @subpackage hab_Hide_Admin_Bar_Based_On_User_Roles/includes
- * @author     Ankit Panchal <ankitmaru@live.in>
+ * @author     Ankit Panchal <wptoolsdev@gmail.com>
  */
 class hab_Hide_Admin_Bar_Based_On_User_Roles_Loader {
 
