@@ -3,7 +3,7 @@
 /**
  * The public-facing functionality of the plugin.
  *
- * @link       https://creovity.agency/
+ * @link       https://xwpstudio.com/
  * @since      1.7.0
  *
  * @package    hab_Hide_Admin_Bar_Based_On_User_Roles

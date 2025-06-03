@@ -1,13 +1,13 @@
 === Hide Admin Bar Based on User Roles ===
-Contributors: ankitmaru  
+Contributors: ankitmaru, freemius
 Tags: admin bar, hide admin bar, hide toolbar, user roles, guest users
-Plugin URI: https://creovity.agency/plugins/hide-admin-bar  
+Plugin URI: https://xwpstudio.com/plugins/hide-admin-bar  
 Author: Ankit Panchal  
-Author URI: https://wpankit.com  
+Author URI: https://xwpankit.com  
 Requires at least: 5.5  
 Tested up to: 6.8  
 Requires PHP: 5.6  
-Stable tag: 6.0.0  
+Stable tag: 6.0.2  
 License: GPLv2 or later  
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -24,13 +24,13 @@ This plugin is very useful to hide the admin bar based on selected user roles an
 - Hide by User Capabilities  
 
 **✨ New in v6.0.0 — Hide Admin Bar Pro is now available!**
-- Auto-hide toolbar after delay (UX improvement)  
-- Hide by device: mobile, tablet, desktop  
-- Page-based targeting: show/hide on specific URLs  
-- Per-user override: set always show/hide  
-- Time-based visibility (e.g., hide at night)  
-- Redirect when hidden  
-- Import/export settings  
+** Auto-hide toolbar after delay (UX improvement) **
+** Hide by device: mobile, tablet, desktop **
+** Page-based targeting: show/hide on specific URLs **
+** Per-user override: set always show/hide **
+** Time-based visibility (e.g., hide at night) **
+** Redirect when hidden **
+** Import/export settings **
 - All new logic modules conditionally loaded (no impact on free users)
 
 > Simple but great plugin. 🙂  
@@ -48,9 +48,10 @@ This plugin is very useful to hide the admin bar based on selected user roles an
 
 == You can check our other plugins: ==
 <ol>
-<li><a href="https://wordpress.org/plugins/ultimakit-for-wp/">The Essential WordPress Toolkit – UltimaKit For WP</a></li>
+<li><a href="https://wordpress.org/plugins/ultimakit-for-wp/">All-in-One WordPress Toolkit for SEO, Security, Customization, and Performance</a></li>
 <li><a href="https://wordpress.org/plugins/like-dislike-for-wp/">Like Dislike For WP</a></li>
 <li><a href="https://wordpress.org/plugins/disable-block-editor-fullscreen-mode/">Disable Block Editor FullScreen mode</a></li>
+<li><a href="https://wordpress.org/plugins/noteflow/">NoteFlow – Smart Notes Manager for WordPress Admin</a></li>
 </ol>
 
 == Installation ==
@@ -82,9 +83,12 @@ Yes, It works fine with any 3rd party WordPress themes and plugins.
 Yes, This plugin hides admin bar for guest users as well.
 
 = Do you offer a Pro version? =
-Yes! Hide Admin Bar Pro unlocks advanced features like page-level targeting, device rules, per-user overrides, time-based logic, redirect after hide, and more. [Learn More](https://creovity.agency/plugins/hide-admin-bar/pro/)
+Yes! Hide Admin Bar Pro unlocks advanced features like page-level targeting, device rules, per-user overrides, time-based logic, redirect after hide, and more. [Learn More](https://xwpstudio.com/plugins/hide-admin-bar/pro/)
 
 == Changelog ==
+
+= 6.0.2 - 03-06-2025 =
+Fixed some bugs and improvements.
 
 = 6.0.0 - 20-04-2025 =
 * Major release: Pro version launched (optional, upgrade via Freemius)
@@ -245,5 +249,5 @@ First release
 
 == Upgrade Notice ==
 
-= 6.0.0 =
-Hide Admin Bar Pro is now available — get advanced visibility logic for pages, users, devices, and more. Existing free features remain intact.
+= 6.0.2 =
+Fixed some bugs and improvements.

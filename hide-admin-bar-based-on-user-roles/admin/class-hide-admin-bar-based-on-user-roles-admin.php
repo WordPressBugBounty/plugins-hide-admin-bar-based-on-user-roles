@@ -3,7 +3,7 @@
 /**
  * The admin-specific functionality of the plugin.
  *
- * @link       https://creovity.agency/
+ * @link       https://xwpstudio.com/
  * @since      1.7.0
  *
  * @package    hab_Hide_Admin_Bar_Based_On_User_Roles
@@ -226,7 +226,7 @@ class hab_Hide_Admin_Bar_Based_On_User_Roles_Admin {
 						</li>
 
 						<li class="nav-item" role="presentation">
-							<a class="nav-link" href="https://creovity.agency/plugins/hide-admin-bar/docs/" target="_blank"><?php esc_html_e( 'Help', 'hide-admin-bar-based-on-user-roles' ); ?></a>
+							<a class="nav-link" href="https://xwpstudio.com/plugins/hide-admin-bar/docs/" target="_blank"><?php esc_html_e( 'Help', 'hide-admin-bar-based-on-user-roles' ); ?></a>
 						</li>
 					</ul>
 					<!-- Tab panes -->
@@ -426,8 +426,8 @@ class hab_Hide_Admin_Bar_Based_On_User_Roles_Admin {
 													</div>
 													
 													<div class="cta-buttons mt-5">
-														<a href="https://creovity.agency/plugins/hide-admin-bar/pro" target="_blank" class="btn btn-primary btn-lg me-3"><?php esc_html_e('Upgrade to Pro', 'hide-admin-bar-based-on-user-roles'); ?></a>
-														<a href="https://creovity.agency/plugins/hide-admin-bar/pro" target="_blank" class="btn btn-outline-primary btn-lg"><?php esc_html_e('View Demo', 'hide-admin-bar-based-on-user-roles'); ?></a>
+														<a href="https://xwpstudio.com/plugins/hide-admin-bar/pro" target="_blank" class="btn btn-primary btn-lg me-3"><?php esc_html_e('Upgrade to Pro', 'hide-admin-bar-based-on-user-roles'); ?></a>
+														<a href="https://xwpstudio.com/plugins/hide-admin-bar/pro" target="_blank" class="btn btn-outline-primary btn-lg"><?php esc_html_e('View Demo', 'hide-admin-bar-based-on-user-roles'); ?></a>
 													</div>
 												</div>
 												
@@ -499,7 +499,7 @@ class hab_Hide_Admin_Bar_Based_On_User_Roles_Admin {
 															</table>
 															
 															<div class="text-center mt-4">
-																<a href="https://creovity.agency/plugins/hide-admin-bar/pro" target="_blank" class="btn btn-success btn-lg w-100"><?php esc_html_e('Get Pro Now', 'hide-admin-bar-based-on-user-roles'); ?></a>
+																<a href="https://xwpstudio.com/plugins/hide-admin-bar/pro" target="_blank" class="btn btn-success btn-lg w-100"><?php esc_html_e('Get Pro Now', 'hide-admin-bar-based-on-user-roles'); ?></a>
 															</div>
 														</div>
 													</div>
