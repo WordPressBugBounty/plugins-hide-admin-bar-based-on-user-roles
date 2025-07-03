@@ -1,5 +1,5 @@
 === Hide Admin Bar Based on User Roles ===
-Contributors: ankitmaru, freemius
+Contributors: ankitmaru
 Tags: admin bar, hide admin bar, hide toolbar, user roles, guest users
 Plugin URI: https://xwpstudio.com/plugins/hide-admin-bar  
 Author: Ankit Panchal  
@@ -7,7 +7,7 @@ Author URI: https://xwpankit.com
 Requires at least: 5.5  
 Tested up to: 6.8  
 Requires PHP: 5.6  
-Stable tag: 6.0.2  
+Stable tag: 6.0.3
 License: GPLv2 or later  
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -86,6 +86,9 @@ Yes, This plugin hides admin bar for guest users as well.
 Yes! Hide Admin Bar Pro unlocks advanced features like page-level targeting, device rules, per-user overrides, time-based logic, redirect after hide, and more. [Learn More](https://xwpstudio.com/plugins/hide-admin-bar/pro/)
 
 == Changelog ==
+
+= 6.0.3 - 03-07-2025 =
+Fixed some bugs and improvements.
 
 = 6.0.2 - 03-06-2025 =
 Fixed some bugs and improvements.
@@ -248,6 +251,3 @@ Fixed some bugs and improvements.
 First release
 
 == Upgrade Notice ==
-
-= 6.0.2 =
-Fixed some bugs and improvements.

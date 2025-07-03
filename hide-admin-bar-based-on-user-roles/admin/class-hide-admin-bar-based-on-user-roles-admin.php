@@ -226,6 +226,10 @@ class hab_Hide_Admin_Bar_Based_On_User_Roles_Admin {
 						</li>
 
 						<li class="nav-item" role="presentation">
+							<a class="nav-link" id="pvc-tab" data-bs-toggle="tab" style="font-weight: 600; text-decoration: underline;" href="#pvc" role="tab" aria-controls="pvc" aria-selected="true"><?php esc_html_e( 'Page Visit Counter [Analytics]', 'hide-admin-bar-based-on-user-roles' ); ?></a>
+						</li>
+
+						<li class="nav-item" role="presentation">
 							<a class="nav-link" href="https://xwpstudio.com/plugins/hide-admin-bar/docs/" target="_blank"><?php esc_html_e( 'Help', 'hide-admin-bar-based-on-user-roles' ); ?></a>
 						</li>
 					</ul>
@@ -597,6 +601,88 @@ class hab_Hide_Admin_Bar_Based_On_User_Roles_Admin {
 							</div>
 						</div> <!-- WordPress Tab End --->
 					
+						<div class="tab-pane fade" id="pvc" role="tabpanel" aria-labelledby="pvc-tab">
+							<div class="row">
+								<div class="ultimakit-promo w-100 my-4">
+									<div class="card border-0 w-100">
+										<div class="card-body p-4">
+											<div class="row g-4 w-100 mx-0">
+												<div class="col-lg-8">
+													<div class="feature-content">
+														<span class="badge bg-primary-subtle text-primary mb-2"><?php esc_html_e( 'A lightweight, privacy-first analytics plugin for WordPress', 'hide-admin-bar-based-on-user-roles' ); ?></span>
+														<h3 class="text-primary mb-3"><?php esc_html_e( 'Page Visit Counter Analytics', 'hide-admin-bar-based-on-user-roles' ); ?></h3>
+														<div class="features-list mb-4">
+															<p class="text-secondary mb-3">
+																<?php esc_html_e( 'Page Visit Counter Analytics is a lightweight, privacy-first analytics plugin for WordPress. It provides detailed insights into your website traffic, including visitor behavior, traffic sources, and campaign performance. It is a great tool for tracking your website\'s performance and making data-driven decisions.', 'hide-admin-bar-based-on-user-roles' ); ?>
+															</p>
+															<div class="module-highlights">
+																<span class="module-tag">📊 <?php esc_html_e( 'Visitor Analytics', 'hide-admin-bar-based-on-user-roles' ); ?></span>
+																<span class="module-tag">⚡ <?php esc_html_e( 'Real-Time Stats', 'hide-admin-bar-based-on-user-roles' ); ?></span>
+																<span class="module-tag">🔍 <?php esc_html_e( 'Traffic Sources', 'hide-admin-bar-based-on-user-roles' ); ?></span>
+																<span class="module-tag">🎯 <?php esc_html_e( 'Campaign Tracking', 'hide-admin-bar-based-on-user-roles' ); ?></span>
+																<span class="module-tag">🧭 <?php esc_html_e( 'Session-Level Insights', 'hide-admin-bar-based-on-user-roles' ); ?></span>
+																<span class="module-tag">✅ <?php esc_html_e( 'Goal Completions', 'hide-admin-bar-based-on-user-roles' ); ?></span>
+																<span class="module-tag">🔥 <?php esc_html_e( 'Click Heatmaps', 'hide-admin-bar-based-on-user-roles' ); ?></span>
+																<span class="module-tag">🔒 <?php esc_html_e( 'Privacy First', 'hide-admin-bar-based-on-user-roles' ); ?></span>
+																<span class="module-tag">🚀 <?php esc_html_e( 'Fast & Lightweight', 'hide-admin-bar-based-on-user-roles' ); ?></span>
+																<span class="module-tag">🧩 <?php esc_html_e( 'Easy to Use', 'hide-admin-bar-based-on-user-roles' ); ?></span>
+															</div>
+														</div>
+														<button href="#" data-plugin-slug="page-visit-counter-analytics" class="install-plugin btn btn-primary btn-lg">
+															<?php esc_html_e( 'Install Page Visit Counter Analytics Now', 'hide-admin-bar-based-on-user-roles' ); ?>
+														</button>
+
+														<div class="loader-wrapper">
+															<div class="loader-bar"></div>
+														</div>
+
+														<div class="progress-steps">
+															<div class="step" data-step="check">
+																<i class="dashicons dashicons-search"></i>
+																<?php esc_html_e( 'Checking plugin status...', 'hide-admin-bar-based-on-user-roles' ); ?>
+															</div>
+															<div class="step" data-step="download">
+																<i class="dashicons dashicons-download"></i>
+																<?php esc_html_e( 'Downloading plugin...', 'hide-admin-bar-based-on-user-roles' ); ?>
+															</div>
+															<div class="step" data-step="install">
+																<i class="dashicons dashicons-admin-plugins"></i>
+																<?php esc_html_e( 'Installing plugin...', 'hide-admin-bar-based-on-user-roles' ); ?>
+															</div>
+															<div class="step" data-step="activate">
+																<i class="dashicons dashicons-yes"></i>
+																<?php esc_html_e( 'Activating plugin...', 'hide-admin-bar-based-on-user-roles' ); ?>
+															</div>
+														</div>
+														
+														<a href="https://pagevisitcounter.com" target="_blank" class="btn btn-primary btn-lg">
+															<?php esc_html_e( 'Learn More About Plugin', 'hide-admin-bar-based-on-user-roles' ); ?>
+														</a>
+													</div>
+												</div>
+												<div class="col-lg-4">
+													<div class="stats-container">
+														<div class="stat-item">
+															<?php printf(esc_html__( '%1$s10+%2$s %3$sPremium Features%2$s', 'hide-admin-bar-based-on-user-roles' ),'<span class="stat-number">','</span>','<span class="stat-label">'); ?>
+														</div>
+														<div class="stat-item">
+															<?php printf(esc_html__( '%1$s800k+%2$s %3$sDownloads%2$s', 'hide-admin-bar-based-on-user-roles' ),'<span class="stat-number">','</span>','<span class="stat-label">'); ?>
+														</div>
+														<div class="stat-item">
+															<?php printf(esc_html__( '%1$s100k+%2$s %3$sActiveCustomers%2$s', 'hide-admin-bar-based-on-user-roles' ),'<span class="stat-number">','</span>','<span class="stat-label">'); ?>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								
+							</div>
+						</div> <!-- Page Visit Counter [Analytics] Tab End --->
+						
+
 					</div>
 					<!-- Duplicate the above block for each module you have -->
 				</div>
