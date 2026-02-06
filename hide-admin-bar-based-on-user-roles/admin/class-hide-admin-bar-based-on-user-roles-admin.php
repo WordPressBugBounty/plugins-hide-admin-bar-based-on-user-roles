@@ -3,7 +3,7 @@
 /**
  * The admin-specific functionality of the plugin.
  *
- * @link       https://xwpstudio.com/
+ * @link       https://xwpstack.com/
  * @since      1.7.0
  *
  * @package    hab_Hide_Admin_Bar_Based_On_User_Roles
@@ -222,15 +222,7 @@ class hab_Hide_Admin_Bar_Based_On_User_Roles_Admin {
 						<?php do_action('hab_admin_menu_tabs'); ?>
 
 						<li class="nav-item" role="presentation">
-							<a class="nav-link" id="tools-tab" data-bs-toggle="tab" style="font-weight: 600; text-decoration: underline;" href="#tools" role="tab" aria-controls="tools" aria-selected="true"><?php esc_html_e( 'All-in-One WordPress Toolkit', 'hide-admin-bar-based-on-user-roles' ); ?></a>
-						</li>
-
-						<li class="nav-item" role="presentation">
-							<a class="nav-link" id="pvc-tab" data-bs-toggle="tab" style="font-weight: 600; text-decoration: underline;" href="#pvc" role="tab" aria-controls="pvc" aria-selected="true"><?php esc_html_e( 'Page Visit Counter [Analytics]', 'hide-admin-bar-based-on-user-roles' ); ?></a>
-						</li>
-
-						<li class="nav-item" role="presentation">
-							<a class="nav-link" href="https://xwpstudio.com/plugins/hide-admin-bar/docs/" target="_blank"><?php esc_html_e( 'Help', 'hide-admin-bar-based-on-user-roles' ); ?></a>
+							<a class="nav-link" id="xwpstack-tab" style="font-weight: 600; text-decoration: underline;" href="https://pluginstack.dev/plugins" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'Get All PluginStack Plugins for 75% OFF!', 'hide-admin-bar-based-on-user-roles' ); ?></a>
 						</li>
 					</ul>
 					<!-- Tab panes -->
@@ -430,8 +422,8 @@ class hab_Hide_Admin_Bar_Based_On_User_Roles_Admin {
 													</div>
 													
 													<div class="cta-buttons mt-5">
-														<a href="https://xwpstudio.com/plugins/hide-admin-bar/pro" target="_blank" class="btn btn-primary btn-lg me-3"><?php esc_html_e('Upgrade to Pro', 'hide-admin-bar-based-on-user-roles'); ?></a>
-														<a href="https://xwpstudio.com/plugins/hide-admin-bar/pro" target="_blank" class="btn btn-outline-primary btn-lg"><?php esc_html_e('View Demo', 'hide-admin-bar-based-on-user-roles'); ?></a>
+														<a href="https://xwpstack.com/plugins/hide-admin-bar/pro" target="_blank" class="btn btn-primary btn-lg me-3"><?php esc_html_e('Upgrade to Pro', 'hide-admin-bar-based-on-user-roles'); ?></a>
+														<a href="https://xwpstack.com/plugins/hide-admin-bar/pro" target="_blank" class="btn btn-outline-primary btn-lg"><?php esc_html_e('View Demo', 'hide-admin-bar-based-on-user-roles'); ?></a>
 													</div>
 												</div>
 												
@@ -503,7 +495,7 @@ class hab_Hide_Admin_Bar_Based_On_User_Roles_Admin {
 															</table>
 															
 															<div class="text-center mt-4">
-																<a href="https://xwpstudio.com/plugins/hide-admin-bar/pro" target="_blank" class="btn btn-success btn-lg w-100"><?php esc_html_e('Get Pro Now', 'hide-admin-bar-based-on-user-roles'); ?></a>
+																<a href="https://xwpstack.com/plugins/hide-admin-bar/pro" target="_blank" class="btn btn-success btn-lg w-100"><?php esc_html_e('Get Pro Now', 'hide-admin-bar-based-on-user-roles'); ?></a>
 															</div>
 														</div>
 													</div>
@@ -518,169 +510,131 @@ class hab_Hide_Admin_Bar_Based_On_User_Roles_Admin {
 
 						<?php do_action('hab_admin_menu_tabs_content'); ?>
 
-						<div class="tab-pane fade" id="tools" role="tabpanel" aria-labelledby="tools-tab">
+						<div class="tab-pane fade" id="xwpstack" role="tabpanel" aria-labelledby="xwpstack-tab" style="display:none !important;">
+							<style>
+								.xwpstack-hero {
+									position: relative;
+									background: radial-gradient(circle at 12% 18%, rgba(92, 160, 255, 0.2), transparent 32%), radial-gradient(circle at 78% 8%, rgba(76, 255, 217, 0.18), transparent 38%), linear-gradient(135deg, #0b0f2a 0%, #0f1a42 45%, #060915 100%);
+									border: 1px solid rgba(255,255,255,0.06);
+									border-radius: 26px;
+									overflow: hidden;
+									color: #eaf1ff;
+									box-shadow: 0 28px 58px -24px rgba(4, 12, 40, 0.9);
+								}
+								.xwpstack-hero:after {
+									content: '';
+									position: absolute;
+									inset: 0;
+									background:
+										radial-gradient(circle at 20% 24%, rgba(255,255,255,0.10), transparent 38%),
+										radial-gradient(circle at 84% 12%, rgba(119, 209, 255, 0.20), transparent 42%),
+										radial-gradient(circle at 62% 78%, rgba(255, 255, 255, 0.09), transparent 48%);
+									filter: blur(0px);
+								}
+								.xwpstack-hero .content { position: relative; z-index: 1; }
+								.xwpstack-pill { padding: 8px 16px; border-radius: 999px; background: rgba(255,255,255,0.14); color: #d7e2ff; font-weight: 700; letter-spacing: 0.02em; backdrop-filter: blur(4px); box-shadow: 0 8px 20px -14px rgba(0,0,0,0.8); }
+								.xwpstack-heading { font-weight: 700; color: #ffffff; line-height: 1.1; }
+								.xwpstack-sub { color: #d5ddff; max-width: 720px; }
+								.xwpstack-feature-chip { padding: 8px 12px; border-radius: 12px; background: rgba(255,255,255,0.08); color: #e7edff; border: 1px solid rgba(255,255,255,0.12); font-size: 12px; backdrop-filter: blur(2px); }
+								.xwpstack-stat { text-align: center; padding: 16px; border-radius: 12px; background: rgba(255,255,255,0.06); color: #eaf1ff; border: 1px solid rgba(255,255,255,0.12); }
+								.xwpstack-grid .card { border: 1px solid #e6ebf6; border-radius: 16px; transition: transform .2s ease, box-shadow .2s ease; background: linear-gradient(180deg, #ffffff 0%, #f5f7ff 100%); }
+								.xwpstack-grid .card:hover { transform: translateY(-5px); box-shadow: 0 22px 36px -24px rgba(12, 31, 74, 0.35); }
+								.xwpstack-grid .card:before { content:''; display:block; height:4px; width:100%; border-radius:14px 14px 0 0; background: linear-gradient(90deg, #3b82f6, #22d3ee); }
+								.xwpstack-tag { padding: 6px 10px; border-radius: 10px; background: #e8f5e9; color: #1b5e20; font-size: 12px; }
+								.xwpstack-card-title { font-weight: 700; color: #0c1f4a; }
+								.xwpstack-card-tagline { font-weight: 600; color: #0f2f6d; }
+							</style>
 							<div class="row">
-								<div class="ultimakit-promo w-100 my-4">
-									<div class="card border-0 w-100">
-										<div class="card-body p-4">
-											<div class="row g-4 w-100 mx-0">
-												<div class="col-lg-8">
-													<div class="feature-content">
-														<span class="badge bg-primary-subtle text-primary mb-2"><?php esc_html_e( '192+ Powerful Modules', 'hide-admin-bar-based-on-user-roles' ); ?></span>
-														<h3 class="text-primary mb-3"><?php esc_html_e( 'UltimaKit For WP – All-in-One WordPress Toolkit for SEO, Customization, and Performance', 'hide-admin-bar-based-on-user-roles' ); ?></h3>
-														<div class="features-list mb-4">
-															<p class="text-secondary mb-3">
-																<?php esc_html_e( 'Simplify your WordPress management with UltimaKit – the all-in-one toolkit that replaces 25+ plugins. Popular modules include:', 'hide-admin-bar-based-on-user-roles' ); ?>
-															</p>
-															<div class="module-highlights">
-																<span class="module-tag"><?php esc_html_e( 'GDPR Compliance', 'hide-admin-bar-based-on-user-roles' ); ?></span>
-																<span class="module-tag"><?php esc_html_e( 'Custom Post Types', 'hide-admin-bar-based-on-user-roles' ); ?></span>
-																<span class="module-tag"><?php esc_html_e( 'SEO Tools', 'hide-admin-bar-based-on-user-roles' ); ?></span>
-																<span class="module-tag"><?php esc_html_e( 'Post &amp; Page Order', 'hide-admin-bar-based-on-user-roles' ); ?></span>
-																<span class="module-tag"><?php esc_html_e( 'Admin Activity Logger', 'hide-admin-bar-based-on-user-roles' ); ?></span>
-																<span class="module-tag"><?php esc_html_e( 'Gravity Forms: Address Autocomplete', 'hide-admin-bar-based-on-user-roles' ); ?></span>
-																<span class="module-tag"><?php esc_html_e( 'Gravity Forms: AI Analysis', 'hide-admin-bar-based-on-user-roles' ); ?></span>
-																<span class="module-tag"><?php esc_html_e( 'Gravity Forms: Form Analytics(Most advanced analytics)', 'hide-admin-bar-based-on-user-roles' ); ?></span>
-																<span class="module-tag"><?php esc_html_e( 'WooCommerce Modules', 'hide-admin-bar-based-on-user-roles' ); ?></span>
-															</div>
-														</div>
-														<button href="#" data-plugin-slug="ultimakit-for-wp" class="install-plugin btn btn-primary btn-lg">
-															<?php esc_html_e( 'Install UltimaKit Now', 'hide-admin-bar-based-on-user-roles' ); ?>
-														</button>
-
-														<div class="loader-wrapper">
-															<div class="loader-bar"></div>
-														</div>
-
-														<div class="progress-steps">
-															<div class="step" data-step="check">
-																<i class="dashicons dashicons-search"></i>
-																<?php esc_html_e( 'Checking plugin status...', 'hide-admin-bar-based-on-user-roles' ); ?>
-															</div>
-															<div class="step" data-step="download">
-																<i class="dashicons dashicons-download"></i>
-																<?php esc_html_e( 'Downloading plugin...', 'hide-admin-bar-based-on-user-roles' ); ?>
-															</div>
-															<div class="step" data-step="install">
-																<i class="dashicons dashicons-admin-plugins"></i>
-																<?php esc_html_e( 'Installing plugin...', 'hide-admin-bar-based-on-user-roles' ); ?>
-															</div>
-															<div class="step" data-step="activate">
-																<i class="dashicons dashicons-yes"></i>
-																<?php esc_html_e( 'Activating plugin...', 'hide-admin-bar-based-on-user-roles' ); ?>
-															</div>
-														</div>
-														
-														<a href="https://wpultimakit.com" target="_blank" class="btn btn-primary btn-lg">
-															<?php esc_html_e( 'Learn More About UltimaKit', 'hide-admin-bar-based-on-user-roles' ); ?>
-														</a>
-													</div>
+								<div class="col-12">
+									<div class="xwpstack-hero p-4 p-lg-5">
+										<div class="row g-4 align-items-center content">
+											<div class="col-lg-8">
+												<div class="d-flex align-items-center gap-2 mb-3">
+													<span class="xwpstack-pill"><?php esc_html_e( 'xWPStack • Premium plugin suite', 'hide-admin-bar-based-on-user-roles' ); ?></span>
+													<span class="badge bg-light text-dark" style="border-radius:12px;"><?php esc_html_e( 'Performance without compromises', 'hide-admin-bar-based-on-user-roles' ); ?></span>
 												</div>
-												<div class="col-lg-4">
-													<div class="stats-container">
-														<div class="stat-item">
-															<?php printf(esc_html__( '%1$s25+%2$s %3$sPlugins Replaced%2$s', 'hide-admin-bar-based-on-user-roles' ),'<span class="stat-number">','</span>','<span class="stat-label">'); ?>
-														</div>
-														<div class="stat-item">
-															<?php printf(esc_html__( '%1$s192+%2$s %3$sPowerful Modules%2$s', 'hide-admin-bar-based-on-user-roles' ),'<span class="stat-number">','</span>','<span class="stat-label">'); ?>
-														</div>
-														<div class="stat-item">
-															<?php printf(esc_html__( '%1$s20+%2$s %3$sWooCommerce Modules%2$s', 'hide-admin-bar-based-on-user-roles' ),'<span class="stat-number">','</span>','<span class="stat-label">'); ?>
-														</div>
-														<div class="stat-item">
-															<?php printf(esc_html__( '%1$s15+%2$s %3$sGravity Forms Modules%2$s', 'hide-admin-bar-based-on-user-roles' ),'<span class="stat-number">','</span>','<span class="stat-label">'); ?>
-														</div>
-													</div>
+												<h3 class="xwpstack-heading mb-3"><?php esc_html_e( 'Build, market, and scale—minus the plugin bloat.', 'hide-admin-bar-based-on-user-roles' ); ?></h3>
+												<p class="xwpstack-sub mb-4">
+													<?php esc_html_e( 'A high-polish stack for teams who care about lighthouse scores, privacy, and conversions. Zero duct tape—just fast, interoperable plugins built to ship content and commerce at scale.', 'hide-admin-bar-based-on-user-roles' ); ?>
+												</p>
+												<div class="d-flex flex-wrap gap-2 mb-4">
+													<span class="xwpstack-feature-chip"><?php esc_html_e( 'Performance-first', 'hide-admin-bar-based-on-user-roles' ); ?></span>
+													<span class="xwpstack-feature-chip"><?php esc_html_e( 'Privacy-friendly analytics', 'hide-admin-bar-based-on-user-roles' ); ?></span>
+													<span class="xwpstack-feature-chip"><?php esc_html_e( 'AI-assisted SEO', 'hide-admin-bar-based-on-user-roles' ); ?></span>
+													<span class="xwpstack-feature-chip"><?php esc_html_e( 'Editor-loved workflows', 'hide-admin-bar-based-on-user-roles' ); ?></span>
+													<span class="xwpstack-feature-chip"><?php esc_html_e( 'Conversion-safe UX', 'hide-admin-bar-based-on-user-roles' ); ?></span>
 												</div>
+												<div class="d-flex flex-wrap gap-2">
+													<a href="https://xwpstack.com/" target="_blank" class="btn btn-light btn-lg text-primary fw-bold"><?php esc_html_e( 'Explore the stack', 'hide-admin-bar-based-on-user-roles' ); ?></a>
+													<a href="https://xwpstack.com/plugins" target="_blank" class="btn btn-outline-light btn-lg text-light"><?php esc_html_e( 'See all plugins', 'hide-admin-bar-based-on-user-roles' ); ?></a>
+												</div>
+											</div>
+											<div class="col-lg-4 ms-lg-auto">
 											</div>
 										</div>
 									</div>
 								</div>
-
-								
 							</div>
-						</div> <!-- WordPress Tab End --->
-					
-						<div class="tab-pane fade" id="pvc" role="tabpanel" aria-labelledby="pvc-tab">
-							<div class="row">
-								<div class="ultimakit-promo w-100 my-4">
-									<div class="card border-0 w-100">
-										<div class="card-body p-4">
-											<div class="row g-4 w-100 mx-0">
-												<div class="col-lg-8">
-													<div class="feature-content">
-														<span class="badge bg-primary-subtle text-primary mb-2"><?php esc_html_e( 'A lightweight, privacy-first analytics plugin for WordPress', 'hide-admin-bar-based-on-user-roles' ); ?></span>
-														<h3 class="text-primary mb-3"><?php esc_html_e( 'Page Visit Counter Analytics', 'hide-admin-bar-based-on-user-roles' ); ?></h3>
-														<div class="features-list mb-4">
-															<p class="text-secondary mb-3">
-																<?php esc_html_e( 'Page Visit Counter Analytics is a lightweight, privacy-first analytics plugin for WordPress. It provides detailed insights into your website traffic, including visitor behavior, traffic sources, and campaign performance. It is a great tool for tracking your website\'s performance and making data-driven decisions.', 'hide-admin-bar-based-on-user-roles' ); ?>
-															</p>
-															<div class="module-highlights">
-																<span class="module-tag">📊 <?php esc_html_e( 'Visitor Analytics', 'hide-admin-bar-based-on-user-roles' ); ?></span>
-																<span class="module-tag">⚡ <?php esc_html_e( 'Real-Time Stats', 'hide-admin-bar-based-on-user-roles' ); ?></span>
-																<span class="module-tag">🔍 <?php esc_html_e( 'Traffic Sources', 'hide-admin-bar-based-on-user-roles' ); ?></span>
-																<span class="module-tag">🎯 <?php esc_html_e( 'Campaign Tracking', 'hide-admin-bar-based-on-user-roles' ); ?></span>
-																<span class="module-tag">🧭 <?php esc_html_e( 'Session-Level Insights', 'hide-admin-bar-based-on-user-roles' ); ?></span>
-																<span class="module-tag">✅ <?php esc_html_e( 'Goal Completions', 'hide-admin-bar-based-on-user-roles' ); ?></span>
-																<span class="module-tag">🔥 <?php esc_html_e( 'Click Heatmaps', 'hide-admin-bar-based-on-user-roles' ); ?></span>
-																<span class="module-tag">🔒 <?php esc_html_e( 'Privacy First', 'hide-admin-bar-based-on-user-roles' ); ?></span>
-																<span class="module-tag">🚀 <?php esc_html_e( 'Fast & Lightweight', 'hide-admin-bar-based-on-user-roles' ); ?></span>
-																<span class="module-tag">🧩 <?php esc_html_e( 'Easy to Use', 'hide-admin-bar-based-on-user-roles' ); ?></span>
-															</div>
-														</div>
-														<button href="#" data-plugin-slug="page-visit-counter-analytics" class="install-plugin btn btn-primary btn-lg">
-															<?php esc_html_e( 'Install Page Visit Counter Analytics Now', 'hide-admin-bar-based-on-user-roles' ); ?>
-														</button>
+							<div class="row mt-4 xwpstack-grid">
+								<?php
+								$plugins = array(
+									array(
+										'title'       => __( '01 • UltimaKit for WP', 'hide-admin-bar-based-on-user-roles' ),
+										'tagline'     => __( 'All-in-one WordPress operating system.', 'hide-admin-bar-based-on-user-roles' ),
+										'description' => __( '192+ performance-tuned modules for SEO, security, publishing, WooCommerce, and Gravity Forms—replace a dozen plugins with one.', 'hide-admin-bar-based-on-user-roles' ),
+										'link'        => 'https://xwpstack.com/plugins/ultimakit-for-wp/',
+										'link_text'   => __( 'View Details', 'hide-admin-bar-based-on-user-roles' ),
+									),
+									array(
+										'title'       => __( '02 • Page Visit Counter Analytics', 'hide-admin-bar-based-on-user-roles' ),
+										'tagline'     => __( 'Privacy-friendly analytics for WordPress.', 'hide-admin-bar-based-on-user-roles' ),
+										'description' => __( 'First-party, cookie-light analytics with referrers, funnels, heatmaps, and reports you can actually ship to legal.', 'hide-admin-bar-based-on-user-roles' ),
+										'link'        => 'https://xwpstack.com/plugins/page-visit-counter-analytics/',
+										'link_text'   => __( 'View Details', 'hide-admin-bar-based-on-user-roles' ),
+									),
+									array(
+										'title'       => __( '03 • xSEOKit', 'hide-admin-bar-based-on-user-roles' ),
+										'tagline'     => __( 'AI-powered SEO tools for WordPress.', 'hide-admin-bar-based-on-user-roles' ),
+										'description' => __( 'AI-assisted meta titles, descriptions, and content scoring with safeguards for speed and brand voice.', 'hide-admin-bar-based-on-user-roles' ),
+										'link'        => 'https://xwpstack.com/plugins/xseokit/',
+										'link_text'   => __( 'View Details', 'hide-admin-bar-based-on-user-roles' ),
+									),
+									array(
+										'title'       => __( '04 • Hide Admin Bar Pro', 'hide-admin-bar-based-on-user-roles' ),
+										'tagline'     => __( 'Clean up your WordPress admin experience.', 'hide-admin-bar-based-on-user-roles' ),
+										'description' => __( 'Granular visibility rules for roles, users, and paths so teams see only what they need.', 'hide-admin-bar-based-on-user-roles' ),
+										'link'        => 'https://xwpstack.com/plugins/hide-admin-bar-pro/',
+										'link_text'   => __( 'View Details', 'hide-admin-bar-based-on-user-roles' ),
+									),
+									array(
+										'title'       => __( '05 • UltimaKit for Gravity Forms', 'hide-admin-bar-based-on-user-roles' ),
+										'tagline'     => __( 'Enhance Gravity Forms with powerful add-ons.', 'hide-admin-bar-based-on-user-roles' ),
+										'description' => __( 'Deep Gravity Forms add-ons: analytics, AI helpers, automations, and UX upgrades that stay lightweight.', 'hide-admin-bar-based-on-user-roles' ),
+										'link'        => 'https://xwpstack.com/plugins/ultimakit-for-gravity-forms/',
+										'link_text'   => __( 'View Details', 'hide-admin-bar-based-on-user-roles' ),
+									),
+								);
 
-														<div class="loader-wrapper">
-															<div class="loader-bar"></div>
-														</div>
-
-														<div class="progress-steps">
-															<div class="step" data-step="check">
-																<i class="dashicons dashicons-search"></i>
-																<?php esc_html_e( 'Checking plugin status...', 'hide-admin-bar-based-on-user-roles' ); ?>
-															</div>
-															<div class="step" data-step="download">
-																<i class="dashicons dashicons-download"></i>
-																<?php esc_html_e( 'Downloading plugin...', 'hide-admin-bar-based-on-user-roles' ); ?>
-															</div>
-															<div class="step" data-step="install">
-																<i class="dashicons dashicons-admin-plugins"></i>
-																<?php esc_html_e( 'Installing plugin...', 'hide-admin-bar-based-on-user-roles' ); ?>
-															</div>
-															<div class="step" data-step="activate">
-																<i class="dashicons dashicons-yes"></i>
-																<?php esc_html_e( 'Activating plugin...', 'hide-admin-bar-based-on-user-roles' ); ?>
-															</div>
-														</div>
-														
-														<a href="https://pagevisitcounter.com" target="_blank" class="btn btn-primary btn-lg">
-															<?php esc_html_e( 'Learn More About Plugin', 'hide-admin-bar-based-on-user-roles' ); ?>
-														</a>
-													</div>
+								foreach ( $plugins as $plugin ) :
+									?>
+									<div class="col-md-6 col-lg-4 mb-3">
+										<div class="card h-100">
+											<div class="card-body d-flex flex-column">
+												<div class="mb-2 fw-bold text-primary"><?php echo esc_html( $plugin['title'] ); ?></div>
+												<div class="mb-2 text-dark"><?php echo esc_html( $plugin['tagline'] ); ?></div>
+												<p class="text-secondary flex-grow-1"><?php echo esc_html( $plugin['description'] ); ?></p>
+												<div class="d-flex flex-wrap gap-2 mb-3">
+													<span class="xwpstack-tag"><?php esc_html_e( 'Fast', 'hide-admin-bar-based-on-user-roles' ); ?></span>
+													<span class="xwpstack-tag"><?php esc_html_e( 'Lightweight', 'hide-admin-bar-based-on-user-roles' ); ?></span>
+													<span class="xwpstack-tag"><?php esc_html_e( 'Easy to Use', 'hide-admin-bar-based-on-user-roles' ); ?></span>
 												</div>
-												<div class="col-lg-4">
-													<div class="stats-container">
-														<div class="stat-item">
-															<?php printf(esc_html__( '%1$s10+%2$s %3$sPremium Features%2$s', 'hide-admin-bar-based-on-user-roles' ),'<span class="stat-number">','</span>','<span class="stat-label">'); ?>
-														</div>
-														<div class="stat-item">
-															<?php printf(esc_html__( '%1$s800k+%2$s %3$sDownloads%2$s', 'hide-admin-bar-based-on-user-roles' ),'<span class="stat-number">','</span>','<span class="stat-label">'); ?>
-														</div>
-														<div class="stat-item">
-															<?php printf(esc_html__( '%1$s100k+%2$s %3$sActiveCustomers%2$s', 'hide-admin-bar-based-on-user-roles' ),'<span class="stat-number">','</span>','<span class="stat-label">'); ?>
-														</div>
-													</div>
-												</div>
+												<a class="btn btn-outline-primary w-100" href="<?php echo esc_url( $plugin['link'] ); ?>" target="_blank"><?php echo esc_html( $plugin['link_text'] ); ?></a>
 											</div>
 										</div>
 									</div>
-								</div>
-
-								
+								<?php endforeach; ?>
 							</div>
-						</div> <!-- Page Visit Counter [Analytics] Tab End --->
+						</div> <!-- xWPStack Tab End --->
 						
 
 					</div>

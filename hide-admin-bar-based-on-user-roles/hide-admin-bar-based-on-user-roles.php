@@ -3,7 +3,7 @@
 /**
  * The plugin bootstrap file
  *
- * @link              https://xwpstudio.com/
+ * @link              https://pluginstack.dev/
  * @since             1.0.0
  * @package           Hide_Admin_Bar_Based_On_User_Roles
  *
@@ -12,9 +12,9 @@
  * Plugin Name:       Hide Admin Bar Based on User Roles
  * Plugin URI:        https://wordpress.org/plugins/hide-admin-bar-based-on-user-roles/
  * Description:       This plugin is very useful to hide admin bar based on selected user roles and user capabilities.
- * Version:           6.0.4
- * Author:            Ankit Panchal
- * Author URI:        https://xwpstudio.com/
+ * Version:           7.0.3
+ * Author:            PluginStackDev
+ * Author URI:        https://pluginstack.dev/
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       hide-admin-bar-based-on-user-roles
@@ -43,7 +43,10 @@ if ( !defined( 'WPINC' ) ) {
  * Start at version 1.7.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'HIDE_ADMIN_BAR_BASED_ON_USER_ROLES', '6.0.4' );
+// Use the existing version constant if the free plugin defined it first.
+if ( !defined( 'HIDE_ADMIN_BAR_BASED_ON_USER_ROLES' ) ) {
+    define( 'HIDE_ADMIN_BAR_BASED_ON_USER_ROLES', '7.0.3' );
+}
 if ( !function_exists( 'habbourp_fs' ) ) {
     // Create a helper function for easy SDK access.
     function habbourp_fs() {
@@ -114,9 +117,12 @@ if ( !function_exists( 'habbourp_fs' ) ) {
      * admin-specific hooks, and public-facing site hooks.
      */
     require plugin_dir_path( __FILE__ ) . 'includes/class-hide-admin-bar-based-on-user-roles.php';
-    // If Pro is active, load Pro loader
+    // If Pro is active and the loader exists, load Pro loader
     if ( function_exists( 'habbourp_fs' ) && habbourp_fs()->can_use_premium_code() ) {
-        require_once plugin_dir_path( __FILE__ ) . 'pro/class-pro-loader.php';
+        $pro_loader = plugin_dir_path( __FILE__ ) . 'pro/class-pro-loader.php';
+        if ( file_exists( $pro_loader ) ) {
+            require_once $pro_loader;
+        }
     }
     /**
      * Begins execution of the plugin.
