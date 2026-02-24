@@ -1,25 +1,25 @@
 === Hide Admin Bar Based on User Roles ===
-Contributors: ankitmaru
-Tags: admin, admin bar, hidden, hide, hide admin bar
+Contributors: ankitmaru, siapanchal
+Tags: admin bar, hide admin bar, toolbar, user roles, admin toolbar
 Plugin URI: https://pluginstack.dev/plugins/hide-admin-bar-pro
 Author: PluginStackDev
-Author URI: https://pluginstack.dev  
-Requires at least: 5.5  
-Tested up to: 6.9  
-Requires PHP: 5.6  
-Stable tag: 7.0.3
-License: GPLv2 or later  
+Author URI: https://pluginstack.dev
+Requires at least: 5.5
+Tested up to: 6.9
+Requires PHP: 5.6
+Stable tag: 7.1.0
+License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Control the visibility of the WordPress Admin Bar (Toolbar) for specific user roles and capabilities. The ultimate solution for membership sites, shops, and clean frontend experiences.
+Hide the WordPress Admin Bar for specific user roles, capabilities, devices, pages, or time windows. The ultimate toolbar control plugin for membership sites, WooCommerce stores, and clean frontend experiences.
 
 == Description ==
 
-**Hide Admin Bar Based On User Roles** gives you complete control over who sees the WordPress toolbar. 
+**Hide Admin Bar Based On User Roles** gives you complete control over who sees the WordPress toolbar.
 
-Whether you are running a membership site, a WooCommerce store, or simply want a cleaner frontend for your subscribers, this plugin allows you to hide the admin bar with precision. Stop confusing your users with backend links they don't need.
+Whether you are running a membership site, a WooCommerce store, or simply want a cleaner frontend for your subscribers, this plugin lets you hide the admin bar with precision — by role, capability, device, page, or time. Stop exposing backend links to users who don't need them.
 
-The plugin is lightweight, fast, and works immediately upon activation.
+The plugin is lightweight, developer-friendly, and works immediately upon activation — no configuration required to get started.
 
 https://www.youtube.com/watch?v=25WBldgArAk
 
@@ -32,20 +32,21 @@ https://www.youtube.com/watch?v=_BAwxGVnKNY
 > - [thebrazeneye](https://wordpress.org/support/topic/works-flawlessly-129/)
 
 ### 🚀 Key Features (Free)
-* **Hide for All Users:** completely remove the admin bar from the frontend.
-* **Hide for Guests:** ensure non-logged-in visitors never see the toolbar.
+* **Hide for All Users:** Completely remove the admin bar from the frontend for everyone.
+* **Hide for Guests:** Ensure non-logged-in visitors never see the toolbar.
 * **Role-Based Hiding:** Select specific roles (e.g., Subscriber, Customer, Editor) to hide the bar for.
-* **Capability-Based Hiding:** Hide the bar based on user capabilities (e.g., hide for anyone who cannot `manage_options`).
-* **Keyboard Shortcuts:** Friendly interface to manage settings quickly.
+* **Capability-Based Hiding:** Hide the bar based on WordPress capabilities (e.g., hide for anyone who cannot `manage_options`).
+* **Lightweight & Fast:** Zero bloat — no external requests, no database overhead on the frontend.
 
 ### 🏆 Premium Features (Pro)
-Unlock advanced visibility logic with the Pro version:
-* **Page-Based Targeting:** Show/Hide the admin bar only on specific URLs or page types.
-* **Device Detection:** Hide the toolbar on Mobile or Tablet to save screen space, but keep it on Desktop.
-* **User Overrides:** Manually force the admin bar to show/hide for specific user accounts.
-* **Time-Based Visibility:** Automatically hide the bar during specific hours.
-* **Smart Redirects:** Redirect users to the homepage or a custom URL if they try to access the backend.
-* **Inactivity Auto-Hide:** Automatically slide the toolbar away after a few seconds of inactivity.
+Unlock advanced visibility logic with the [Pro version](https://pluginstack.dev/plugins/hide-admin-bar-pro):
+* **Page-Based Targeting:** Show or hide the admin bar only on specific URLs, post types, or page templates.
+* **Device Detection:** Hide the toolbar on Mobile or Tablet to save screen space, while keeping it on Desktop.
+* **Per-User Overrides:** Manually force the admin bar to show or hide for individual user accounts.
+* **Time-Based Visibility:** Automatically hide the bar during specific hours of the day.
+* **Smart Redirects:** Redirect users to the homepage or a custom URL when they try to access the backend.
+* **Inactivity Auto-Hide:** Automatically slide the toolbar away after a configurable period of inactivity.
+* **Import / Export Settings:** Back up and migrate your configuration across sites in one click.
 
 == You can check our other plugins: ==
 <ol>
@@ -70,10 +71,19 @@ Install it via Plugins → Add New → Search: *Hide Admin Bar Based on User Rol
 By default, no. You have full control. You can choose to hide it for Administrators if you wish, but most users keep it visible for admins and hidden for everyone else.
 
 = Can I hide the admin bar for WooCommerce customers only? =
-Yes. Simply go to the settings and check the "Customer" user role.
+Yes. Go to Settings → Hide Admin Bar and check the "Customer" user role. It works with any custom role registered by WooCommerce or other plugins.
+
+= Will this plugin slow down my site? =
+No. The visibility logic runs at the `show_admin_bar` filter level — it is one of the earliest and lightest hooks in WordPress. There is no frontend CSS or JavaScript loaded.
 
 = Is this plugin compatible with other themes? =
-Yes, it follows standard WordPress coding practices and works with all major themes and page builders (Elementor, Divi, Beaver Builder, etc.).
+Yes. It follows standard WordPress coding practices and works with all major themes and page builders including Elementor, Divi, Beaver Builder, and Bricks.
+
+= Can I hide the admin bar on specific pages only? (Pro) =
+Yes — with the Pro version you can target specific URLs, post types, or page templates for granular page-level control.
+
+= Does it work on multisite? =
+Yes. The plugin supports WordPress Multisite networks.
 
 == Screenshots ==
 
@@ -82,11 +92,16 @@ Yes, it follows standard WordPress coding practices and works with all major the
 
 == Changelog ==
 
+= 7.1.0 =
+* Improved: Admin settings UI refresh for better usability.
+* Improved: Code quality and inline documentation.
+* Fixed: Minor compatibility issues with the latest WordPress version.
+
 = 7.0.3 - 31-01-2026 =
-Fixed some bugs and improvements.
+* Fixed: Minor bugs and stability improvements.
 
 = 7.0.1 - 25-11-2025 =
-Fixed some bugs and improvements.
+* Fixed: Minor bugs and stability improvements.
 
 = 6.0.3 - 03-07-2025 =
 Fixed some bugs and improvements.
@@ -252,3 +267,6 @@ Fixed some bugs and improvements.
 First release
 
 == Upgrade Notice ==
+
+= 7.1.0 =
+UI improvements and compatibility fixes. Safe to upgrade — no settings changes required.

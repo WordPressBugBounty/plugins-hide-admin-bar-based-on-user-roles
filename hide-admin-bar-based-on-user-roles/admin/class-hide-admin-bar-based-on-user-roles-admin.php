@@ -3,7 +3,7 @@
 /**
  * The admin-specific functionality of the plugin.
  *
- * @link       https://xwpstack.com/
+ * @link       https://pluginstack.dev/
  * @since      1.7.0
  *
  * @package    hab_Hide_Admin_Bar_Based_On_User_Roles
@@ -18,7 +18,7 @@
  *
  * @package    hab_Hide_Admin_Bar_Based_On_User_Roles
  * @subpackage hab_Hide_Admin_Bar_Based_On_User_Roles/admin
- * @author     Ankit Panchal <wptoolsdev@gmail.com>
+ * @author     Ankit Panchal <support@pluginstack.dev>
  */
 class hab_Hide_Admin_Bar_Based_On_User_Roles_Admin {
 
@@ -222,7 +222,7 @@ class hab_Hide_Admin_Bar_Based_On_User_Roles_Admin {
 						<?php do_action('hab_admin_menu_tabs'); ?>
 
 						<li class="nav-item" role="presentation">
-							<a class="nav-link" id="xwpstack-tab" style="font-weight: 600; text-decoration: underline;" href="https://pluginstack.dev/plugins" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'Get All PluginStack Plugins for 75% OFF!', 'hide-admin-bar-based-on-user-roles' ); ?></a>
+							<a class="nav-link" id="xwpstack-tab" style="font-weight: 600; text-decoration: underline;" href="https://pluginstack.dev/" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'Get All PluginStack Plugins for 75% OFF!', 'hide-admin-bar-based-on-user-roles' ); ?></a>
 						</li>
 					</ul>
 					<!-- Tab panes -->
@@ -422,8 +422,8 @@ class hab_Hide_Admin_Bar_Based_On_User_Roles_Admin {
 													</div>
 													
 													<div class="cta-buttons mt-5">
-														<a href="https://xwpstack.com/plugins/hide-admin-bar/pro" target="_blank" class="btn btn-primary btn-lg me-3"><?php esc_html_e('Upgrade to Pro', 'hide-admin-bar-based-on-user-roles'); ?></a>
-														<a href="https://xwpstack.com/plugins/hide-admin-bar/pro" target="_blank" class="btn btn-outline-primary btn-lg"><?php esc_html_e('View Demo', 'hide-admin-bar-based-on-user-roles'); ?></a>
+														<a href="https://pluginstack.dev/plugins/hide-admin-bar/pro" target="_blank" class="btn btn-primary btn-lg me-3"><?php esc_html_e('Upgrade to Pro', 'hide-admin-bar-based-on-user-roles'); ?></a>
+														<a href="https://pluginstack.dev/plugins/hide-admin-bar/pro" target="_blank" class="btn btn-outline-primary btn-lg"><?php esc_html_e('View Demo', 'hide-admin-bar-based-on-user-roles'); ?></a>
 													</div>
 												</div>
 												
@@ -495,7 +495,7 @@ class hab_Hide_Admin_Bar_Based_On_User_Roles_Admin {
 															</table>
 															
 															<div class="text-center mt-4">
-																<a href="https://xwpstack.com/plugins/hide-admin-bar/pro" target="_blank" class="btn btn-success btn-lg w-100"><?php esc_html_e('Get Pro Now', 'hide-admin-bar-based-on-user-roles'); ?></a>
+																<a href="https://pluginstack.dev/plugins/hide-admin-bar/pro" target="_blank" class="btn btn-success btn-lg w-100"><?php esc_html_e('Get Pro Now', 'hide-admin-bar-based-on-user-roles'); ?></a>
 															</div>
 														</div>
 													</div>
@@ -565,8 +565,8 @@ class hab_Hide_Admin_Bar_Based_On_User_Roles_Admin {
 													<span class="xwpstack-feature-chip"><?php esc_html_e( 'Conversion-safe UX', 'hide-admin-bar-based-on-user-roles' ); ?></span>
 												</div>
 												<div class="d-flex flex-wrap gap-2">
-													<a href="https://xwpstack.com/" target="_blank" class="btn btn-light btn-lg text-primary fw-bold"><?php esc_html_e( 'Explore the stack', 'hide-admin-bar-based-on-user-roles' ); ?></a>
-													<a href="https://xwpstack.com/plugins" target="_blank" class="btn btn-outline-light btn-lg text-light"><?php esc_html_e( 'See all plugins', 'hide-admin-bar-based-on-user-roles' ); ?></a>
+													<a href="https://pluginstack.dev/" target="_blank" class="btn btn-light btn-lg text-primary fw-bold"><?php esc_html_e( 'Explore the stack', 'hide-admin-bar-based-on-user-roles' ); ?></a>
+													<a href="https://pluginstack.dev/plugins" target="_blank" class="btn btn-outline-light btn-lg text-light"><?php esc_html_e( 'See all plugins', 'hide-admin-bar-based-on-user-roles' ); ?></a>
 												</div>
 											</div>
 											<div class="col-lg-4 ms-lg-auto">
@@ -582,35 +582,35 @@ class hab_Hide_Admin_Bar_Based_On_User_Roles_Admin {
 										'title'       => __( '01 • UltimaKit for WP', 'hide-admin-bar-based-on-user-roles' ),
 										'tagline'     => __( 'All-in-one WordPress operating system.', 'hide-admin-bar-based-on-user-roles' ),
 										'description' => __( '192+ performance-tuned modules for SEO, security, publishing, WooCommerce, and Gravity Forms—replace a dozen plugins with one.', 'hide-admin-bar-based-on-user-roles' ),
-										'link'        => 'https://xwpstack.com/plugins/ultimakit-for-wp/',
+										'link'        => 'https://pluginstack.dev/plugins/ultimakit-for-wp/',
 										'link_text'   => __( 'View Details', 'hide-admin-bar-based-on-user-roles' ),
 									),
 									array(
 										'title'       => __( '02 • Page Visit Counter Analytics', 'hide-admin-bar-based-on-user-roles' ),
 										'tagline'     => __( 'Privacy-friendly analytics for WordPress.', 'hide-admin-bar-based-on-user-roles' ),
 										'description' => __( 'First-party, cookie-light analytics with referrers, funnels, heatmaps, and reports you can actually ship to legal.', 'hide-admin-bar-based-on-user-roles' ),
-										'link'        => 'https://xwpstack.com/plugins/page-visit-counter-analytics/',
+										'link'        => 'https://pluginstack.dev/plugins/page-visit-counter-analytics/',
 										'link_text'   => __( 'View Details', 'hide-admin-bar-based-on-user-roles' ),
 									),
 									array(
 										'title'       => __( '03 • xSEOKit', 'hide-admin-bar-based-on-user-roles' ),
 										'tagline'     => __( 'AI-powered SEO tools for WordPress.', 'hide-admin-bar-based-on-user-roles' ),
 										'description' => __( 'AI-assisted meta titles, descriptions, and content scoring with safeguards for speed and brand voice.', 'hide-admin-bar-based-on-user-roles' ),
-										'link'        => 'https://xwpstack.com/plugins/xseokit/',
+										'link'        => 'https://pluginstack.dev/plugins/xseokit/',
 										'link_text'   => __( 'View Details', 'hide-admin-bar-based-on-user-roles' ),
 									),
 									array(
 										'title'       => __( '04 • Hide Admin Bar Pro', 'hide-admin-bar-based-on-user-roles' ),
 										'tagline'     => __( 'Clean up your WordPress admin experience.', 'hide-admin-bar-based-on-user-roles' ),
 										'description' => __( 'Granular visibility rules for roles, users, and paths so teams see only what they need.', 'hide-admin-bar-based-on-user-roles' ),
-										'link'        => 'https://xwpstack.com/plugins/hide-admin-bar-pro/',
+										'link'        => 'https://pluginstack.dev/plugins/hide-admin-bar-pro/',
 										'link_text'   => __( 'View Details', 'hide-admin-bar-based-on-user-roles' ),
 									),
 									array(
 										'title'       => __( '05 • UltimaKit for Gravity Forms', 'hide-admin-bar-based-on-user-roles' ),
 										'tagline'     => __( 'Enhance Gravity Forms with powerful add-ons.', 'hide-admin-bar-based-on-user-roles' ),
 										'description' => __( 'Deep Gravity Forms add-ons: analytics, AI helpers, automations, and UX upgrades that stay lightweight.', 'hide-admin-bar-based-on-user-roles' ),
-										'link'        => 'https://xwpstack.com/plugins/ultimakit-for-gravity-forms/',
+										'link'        => 'https://pluginstack.dev/plugins/ultimakit-for-gravity-forms/',
 										'link_text'   => __( 'View Details', 'hide-admin-bar-based-on-user-roles' ),
 									),
 								);

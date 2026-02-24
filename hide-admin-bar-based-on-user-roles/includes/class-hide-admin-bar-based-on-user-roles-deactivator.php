@@ -3,7 +3,7 @@
 /**
  * Fired during plugin deactivation
  *
- * @link       https://xwpstack.com/
+ * @link       https://pluginstack.dev/
  * @since      1.7.0
  *
  * @package    hab_Hide_Admin_Bar_Based_On_User_Roles
@@ -18,7 +18,7 @@
  * @since      1.7.0
  * @package    hab_Hide_Admin_Bar_Based_On_User_Roles
  * @subpackage hab_Hide_Admin_Bar_Based_On_User_Roles/includes
- * @author     Ankit Panchal <wptoolsdev@gmail.com>
+ * @author     Ankit Panchal <support@pluginstack.dev>
  */
 class hab_Hide_Admin_Bar_Based_On_User_Roles_Deactivator {
 
