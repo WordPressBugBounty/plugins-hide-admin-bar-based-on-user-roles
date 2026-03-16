@@ -5,9 +5,9 @@ Plugin URI: https://pluginstack.dev/plugins/hide-admin-bar-pro
 Author: PluginStackDev
 Author URI: https://pluginstack.dev
 Requires at least: 5.5
-Tested up to: 6.9
+Tested up to: 7.0
 Requires PHP: 5.6
-Stable tag: 7.1.0
+Stable tag: 7.2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -91,6 +91,10 @@ Yes. The plugin supports WordPress Multisite networks.
 2. Hide by roles or capabilities
 
 == Changelog ==
+
+= 7.2.0 =
+* Improved: Admin settings UI refresh for better usability.
+* Fixed: Minor compatibility issues with the latest WordPress version.
 
 = 7.1.0 =
 * Improved: Admin settings UI refresh for better usability.
