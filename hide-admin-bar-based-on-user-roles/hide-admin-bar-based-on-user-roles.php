@@ -12,7 +12,7 @@
  * Plugin Name:       Hide Admin Bar Based on User Roles
  * Plugin URI:        https://wordpress.org/plugins/hide-admin-bar-based-on-user-roles/
  * Description:       Hide the WordPress Admin Bar for specific user roles, capabilities, devices, pages, or time windows. Lightweight and works out of the box.
- * Version:           7.2.1
+ * Version:           7.2.3
  * Author:            PluginStackDev
  * Author URI:        https://pluginstack.dev
  * License:           GPL-2.0+
@@ -45,7 +45,7 @@ if ( !defined( 'WPINC' ) ) {
  */
 // Use the existing version constant if the free plugin defined it first.
 if ( !defined( 'HIDE_ADMIN_BAR_BASED_ON_USER_ROLES' ) ) {
-    define( 'HIDE_ADMIN_BAR_BASED_ON_USER_ROLES', '7.2.1' );
+    define( 'HIDE_ADMIN_BAR_BASED_ON_USER_ROLES', '7.2.3' );
 }
 if ( !function_exists( 'habbourp_fs' ) ) {
     // Create a helper function for easy SDK access.

@@ -186,16 +186,23 @@ class hab_Hide_Admin_Bar_Based_On_User_Roles_Public {
 	 * @since 6.0.0
 	 */
 	private function should_hide_for_user_capability($settings) {
-		$hab_capabilities = (isset($settings["hab_capabilities"])) ? explode(",", $settings["hab_capabilities"]) : "";
-		
-		if (is_array($hab_capabilities)) {
-			foreach ($hab_capabilities as $caps) {
-				if (current_user_can($caps)) {
-					return true;
-				}
+		$raw_capabilities = (isset($settings["hab_capabilities"])) ? $settings["hab_capabilities"] : "";
+
+		if (!is_string($raw_capabilities) || trim($raw_capabilities) === "") {
+			return false;
+		}
+
+		// explode(",", "") returns array(""), and current_user_can("") returns true
+		// for super admins due to WordPress's super-admin bypass. Trim each entry and
+		// drop empties so we never run a capability check against an empty string.
+		$hab_capabilities = array_filter(array_map('trim', explode(",", $raw_capabilities)), 'strlen');
+
+		foreach ($hab_capabilities as $caps) {
+			if (current_user_can($caps)) {
+				return true;
 			}
 		}
-		
+
 		return false;
 	}
 
