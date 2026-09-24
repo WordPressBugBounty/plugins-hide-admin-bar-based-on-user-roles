@@ -3,7 +3,7 @@
 /**
  * The public-facing functionality of the plugin.
  *
- * @link       https://pluginstack.dev/
+ * @link       https://wpankit.com/
  * @since      1.7.0
  *
  * @package    hab_Hide_Admin_Bar_Based_On_User_Roles
@@ -18,7 +18,7 @@
  *
  * @package    hab_Hide_Admin_Bar_Based_On_User_Roles
  * @subpackage hab_Hide_Admin_Bar_Based_On_User_Roles/public
- * @author     Ankit Panchal <support@pluginstack.dev>
+ * @author     Ankit Panchal
  */
 class hab_Hide_Admin_Bar_Based_On_User_Roles_Public {
 
@@ -51,52 +51,6 @@ class hab_Hide_Admin_Bar_Based_On_User_Roles_Public {
 
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
-
-	}
-
-	/**
-	 * Register the stylesheets for the public-facing side of the site.
-	 *
-	 * @since    1.7.0
-	 */
-	public function enqueue_styles() {
-
-		/**
-		 * This function is provided for demonstration purposes only.
-		 *
-		 * An instance of this class should be passed to the run() function
-		 * defined in hab_Hide_Admin_Bar_Based_On_User_Roles_Loader as all of the hooks are defined
-		 * in that particular class.
-		 *
-		 * The hab_Hide_Admin_Bar_Based_On_User_Roles_Loader will then create the relationship
-		 * between the defined hooks and the functions defined in this
-		 * class.
-		 */
-
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/hide-admin-bar-based-on-user-roles-public.css', array(), $this->version, 'all' );
-
-	}
-
-	/**
-	 * Register the JavaScript for the public-facing side of the site.
-	 *
-	 * @since    1.7.0
-	 */
-	public function enqueue_scripts() {
-
-		/**
-		 * This function is provided for demonstration purposes only.
-		 *
-		 * An instance of this class should be passed to the run() function
-		 * defined in hab_Hide_Admin_Bar_Based_On_User_Roles_Loader as all of the hooks are defined
-		 * in that particular class.
-		 *
-		 * The hab_Hide_Admin_Bar_Based_On_User_Roles_Loader will then create the relationship
-		 * between the defined hooks and the functions defined in this
-		 * class.
-		 */
-
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/hide-admin-bar-based-on-user-roles-public.js', array( 'jquery' ), $this->version, false );
 
 	}
 

@@ -1,27 +1,27 @@
-=== Hide Admin Bar Based on User Roles – Disable the WordPress Toolbar by Role, Device or Page ===
+=== Hide Admin Bar Based on User Roles – Disable the WordPress Toolbar by Role or Capability ===
 Contributors: ankitmaru, siapanchal
 Tags: hide admin bar, admin bar, toolbar, user roles, remove admin bar
-Plugin URI: https://pluginstack.dev/plugins/hide-admin-bar-pro
-Author: PluginStackDev
-Author URI: https://pluginstack.dev
+Plugin URI: https://wordpress.org/plugins/hide-admin-bar-based-on-user-roles/
+Author: WPAnkit
+Author URI: https://wpankit.com/
 Requires at least: 5.5
 Tested up to: 7.1
 Requires PHP: 5.6
-Stable tag: 7.2.5
+Stable tag: 7.3.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Hide the WordPress admin bar for specific user roles, capabilities, devices or pages. Remove the toolbar for subscribers, customers & guests.
+Hide the WordPress admin bar for specific user roles or capabilities. Remove the toolbar for subscribers, customers & guests.
 
 == Description ==
 
-= The complete WordPress admin bar control plugin =
+**Hide Admin Bar Based on User Roles** lets you choose who sees the WordPress admin bar (the toolbar) on the front end of your site.
 
-**Hide Admin Bar Based On User Roles** gives you complete control over who sees the WordPress admin bar (toolbar) on the frontend of your site.
+Remove it for subscribers, hide it from WooCommerce customers, turn it off for everyone, or target specific roles and capabilities, all from one settings page and without writing code.
 
-Remove the admin bar for subscribers, hide the toolbar for WooCommerce customers, disable it for all users, or build precise visibility rules by role, capability, device, page, or time — all without writing a single line of code.
+The plugin is lightweight and works as soon as you activate it. Trusted on **20,000+ active WordPress sites**.
 
-The plugin is lightweight, developer-friendly, and works immediately upon activation — no configuration required to get started. Trusted on **20,000+ active WordPress sites**.
+It's completely free: no Pro version, no locked features, no upsells.
 
 https://www.youtube.com/watch?v=25WBldgArAk
 
@@ -44,86 +44,79 @@ The black toolbar at the top of your site is useful for admins — but for every
 * **Communities & directories** – hide backend access hints from registered users
 * **Anyone who wants a cleaner frontend** – remove the admin bar without touching functions.php
 
-### 🚀 Key Features (Free)
+= Features =
 
-* **Hide for All Users:** Completely remove the admin bar from the frontend for everyone.
-* **Hide for Guests:** Ensure non-logged-in visitors never see the toolbar.
-* **Role-Based Hiding:** Select specific roles (e.g., Subscriber, Customer, Editor) to hide the bar for.
-* **Capability-Based Hiding:** Hide the bar based on WordPress capabilities (e.g., hide for anyone who cannot `manage_options`).
-* **Lightweight & Fast:** Zero bloat — no external requests, no database overhead on the frontend.
-
-### 🏆 Premium Features (Pro)
-
-Unlock advanced visibility logic with the [Pro version](https://pluginstack.dev/plugins/hide-admin-bar-pro):
-
-* **Page-Based Targeting:** Show or hide the admin bar only on specific URLs, post types, or page templates.
-* **Device Detection:** Hide the toolbar on Mobile or Tablet to save screen space, while keeping it on Desktop.
-* **Per-User Overrides:** Manually force the admin bar to show or hide for individual user accounts.
-* **Time-Based Visibility:** Automatically hide the bar during specific hours of the day.
-* **Smart Redirects:** Redirect users to the homepage or a custom URL when they try to access the backend.
-* **Inactivity Auto-Hide:** Automatically slide the toolbar away after a configurable period of inactivity.
-* **Import / Export Settings:** Back up and migrate your configuration across sites in one click.
+* **Hide for everyone:** remove the admin bar from the front end for every logged-in user.
+* **Hide for logged-out visitors:** make sure visitors never see it, even when a plugin such as BuddyPress shows it to them.
+* **Hide by role:** pick roles such as Subscriber, Customer or Editor, including custom roles from other plugins.
+* **Hide by capability:** hide it for anyone who has a capability, for example `edit_posts`.
+* **Nothing added to your site's front end:** no CSS, no JavaScript, no extra database queries.
 
 = Works with your setup =
 
 Hide Admin Bar Based on User Roles works with any theme and any plugin that registers user roles — including WooCommerce (Customer role), membership plugins, LMS plugins, and custom roles. Fully compatible with Elementor, Divi, Beaver Builder, Bricks, and WordPress Multisite.
 
-== You can check our other plugins: ==
-<ol>
-<li><a href="https://wordpress.org/plugins/ultimakit-for-wp/">All-in-One WordPress Toolkit for SEO, Security, Customization, and Performance</a></li>
-<li><a href="https://wordpress.org/plugins/like-dislike-for-wp/">Like Dislike For WP</a></li>
-<li><a href="https://wordpress.org/plugins/disable-block-editor-fullscreen-mode/">Disable Block Editor FullScreen mode</a></li>
-<li><a href="https://wordpress.org/plugins/noteflow/">NoteFlow – Smart Notes Manager for WordPress Admin</a></li>
-<li><a href="https://wordpress.org/plugins/page-visit-counter-analytics/">Page Visit Counter Analytics – Google Analytics Alternative</a></li>
-</ol>
+= More from the makers of Hide Admin Bar =
+
+* **[Page Visit Counter](https://pagevisitcounter.com/)** – Privacy-first analytics inside WordPress. See visitors and page views in your dashboard, with no cookies and no external scripts.
+* **[PushRow for Google Sheets](https://getpushrow.com/)** – Keep Google Sheets in sync with WordPress. Send posts, users, form entries and WooCommerce orders to any spreadsheet.
+* **[UltimaKit](https://wordpress.org/plugins/ultimakit-for-wp/)** – Admin tools, security and performance in one plugin.
+* **[Disable Block Editor FullScreen mode](https://wordpress.org/plugins/disable-block-editor-fullscreen-mode/)** – Open the block editor without fullscreen mode.
+* **[NoteFlow](https://wordpress.org/plugins/noteflow/)** – Create, organize and manage notes in your WordPress dashboard.
+* **[Like Dislike For WP](https://wordpress.org/plugins/like-dislike-for-wp/)** – Add like and dislike buttons to your posts and pages, with vote stats.
 
 == Installation ==
 
-1. Upload the plugin files to the `/wp-content/plugins/hide-admin-bar-based-on-user-roles` directory, or install the plugin through the WordPress plugins screen directly.
-2. Activate the plugin through the 'Plugins' screen in WordPress.
-3. Use the **Settings → Hide Admin Bar** screen to configure your visibility rules.
-
-**OR**
-Install it via Plugins → Add New → Search: *Hide Admin Bar Based on User Roles*
+1. In your dashboard, go to **Plugins → Add New Plugin** and search for *Hide Admin Bar Based on User Roles*. Or upload the plugin folder to `/wp-content/plugins/`.
+2. Activate the plugin.
+3. Go to **Settings → Hide Admin Bar Settings** and choose who shouldn't see the admin bar.
 
 == Frequently Asked Questions ==
 
 = How do I hide the admin bar for all users? =
-Go to Settings → Hide Admin Bar and enable the "hide for all users" option. The toolbar disappears from the frontend for every logged-in user instantly.
+Go to Settings → Hide Admin Bar Settings and turn on “Hide for everyone”. The admin bar disappears from the front end for every logged-in user, administrators included.
 
-= How do I remove the admin bar for subscribers or customers only? =
-Select the Subscriber (or Customer) role on the settings page. The admin bar stays visible for administrators and any other roles you leave unchecked — perfect for WooCommerce stores and membership sites.
+= How do I hide the admin bar for subscribers or WooCommerce customers only? =
+Under “Hide for these roles”, select Subscriber or Customer and save. Administrators and any roles you leave unselected keep the admin bar. Custom roles from membership, LMS and other plugins appear in the list too.
+
+= How does hiding by capability work? =
+Add a capability, such as `edit_posts`, and anyone who has it won't see the admin bar. This helps when a membership or LMS plugin grants capabilities rather than roles.
 
 = Can I disable the WordPress admin bar without code? =
-Yes — that's exactly what this plugin does. Instead of adding `show_admin_bar` filter snippets to functions.php (which are lost when you switch themes), you get a simple settings screen with role, capability, and user-based rules.
+Yes — that's exactly what this plugin does. Instead of adding `show_admin_bar` snippets to functions.php (which are lost when you switch themes), you get a settings page with role, capability and guest rules.
 
-= Does this plugin affect Administrators? =
-By default, no. You have full control. You can choose to hide it for Administrators if you wish, but most users keep it visible for admins and hidden for everyone else.
+= Does this plugin affect administrators? =
+Only if you choose to. Administrators keep the admin bar unless you turn on “Hide for everyone”, select the Administrator role, or add a capability they have.
 
-= Can I hide the admin bar for WooCommerce customers only? =
-Yes. Go to Settings → Hide Admin Bar and check the "Customer" user role. It works with any custom role registered by WooCommerce or other plugins.
-
-= Does it hide the admin bar inside the WordPress dashboard too? =
-The plugin controls the toolbar on the frontend of your site. Inside wp-admin, WordPress always shows the toolbar as part of the admin interface. With the Pro version you can also redirect users away from the backend entirely.
+= Does it hide the admin bar inside the dashboard too? =
+No. The plugin controls the admin bar on the front end of your site. Inside the dashboard, WordPress always shows it.
 
 = Will this plugin slow down my site? =
-No. The visibility logic runs at the `show_admin_bar` filter level — it is one of the earliest and lightest hooks in WordPress. There is no frontend CSS or JavaScript loaded.
+No. It adds no CSS or JavaScript to the front end, and the visibility check runs once per page, before the page is built.
 
-= Is this plugin compatible with other themes? =
-Yes. It follows standard WordPress coding practices and works with all major themes and page builders including Elementor, Divi, Beaver Builder, and Bricks.
-
-= Can I hide the admin bar on specific pages only? (Pro) =
-Yes — with the Pro version you can target specific URLs, post types, or page templates for granular page-level control.
+= Does it work with my theme and page builder? =
+Yes. It works with any theme and with page builders such as Elementor, Divi, Beaver Builder and Bricks.
 
 = Does it work on multisite? =
 Yes. The plugin supports WordPress Multisite networks.
 
+= Is there a Pro version? =
+No. Hide Admin Bar is completely free, with no locked features and no upsells.
+
 == Screenshots ==
 
-1. Hide admin bar for all users
-2. Hide by roles or capabilities
+1. Choose who doesn't see the admin bar: everyone, logged-out visitors, specific roles, or users with certain capabilities.
+2. “Hide for everyone” removes the admin bar for every logged-in user.
 
 == Changelog ==
+
+= 7.3.0 =
+* New: Redesigned settings page that looks and works like the rest of WordPress. Changes save without reloading the page.
+* New: Add capabilities as tags. They are no longer cut off at 20 characters.
+* Improved: The plugin no longer loads any CSS or JavaScript (including jQuery) on the front end of your site.
+* Improved: The settings page loads one small stylesheet and script instead of Bootstrap and other libraries, making the plugin about 2 MB smaller.
+* Improved: The plugin is now completely free. Upgrade prompts and ads for paid plans are gone.
+* Updated: Freemius SDK 2.13.4.
 
 = 7.2.5 =
 * Fixed: Minor compatibility issues with the latest WordPress version.
@@ -316,3 +309,6 @@ Fixed some bugs and improvements.
 First release
 
 == Upgrade Notice ==
+
+= 7.3.0 =
+A redesigned settings page, nothing added to your site's front end, and the plugin is now completely free. Your settings are kept.
