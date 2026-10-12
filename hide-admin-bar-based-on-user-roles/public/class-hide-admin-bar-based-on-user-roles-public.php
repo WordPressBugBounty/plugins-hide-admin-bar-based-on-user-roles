@@ -50,109 +50,111 @@ class hab_Hide_Admin_Bar_Based_On_User_Roles_Public {
 	public function __construct( $plugin_name, $version ) {
 
 		$this->plugin_name = $plugin_name;
-		$this->version = $version;
-
+		$this->version     = $version;
 	}
 
 	/**
 	 * Main function to handle admin bar visibility
-	 * 
+	 *
 	 * @since 6.0.0
 	 */
 	public function hab_hide_admin_bar() {
 		// Check if admin bar should be hidden based on various conditions
-		if ($this->should_hide_admin_bar()) {
-			$this->set_admin_bar_visibility(false);
+		if ( $this->should_hide_admin_bar() ) {
+			$this->set_admin_bar_visibility( false );
 		}
 	}
 
 	/**
 	 * Set the visibility of the admin bar
-	 * 
+	 *
 	 * @param bool $show Whether to show the admin bar
 	 * @since 6.0.0
 	 */
-	private function set_admin_bar_visibility($show = true) {
-		show_admin_bar($show);
+	private function set_admin_bar_visibility( $show = true ) {
+		show_admin_bar( $show );
 	}
 
 	/**
 	 * Determine if admin bar should be hidden based on all conditions
-	 * 
+	 *
 	 * @return bool True if admin bar should be hidden
 	 * @since 6.0.0
 	 */
 	private function should_hide_admin_bar() {
-		$settings = get_option("hab_settings", array(
-			'hab_disableforall' => 'no',
-			'hab_userRoles' => array(),
-			'hab_capabilities' => '',
-			'hab_disableforallGuests' => 'no'
-		));
+		$settings = get_option(
+			'hab_settings',
+			array(
+				'hab_disableforall'       => 'no',
+				'hab_userRoles'           => array(),
+				'hab_capabilities'        => '',
+				'hab_disableforallGuests' => 'no',
+			)
+		);
 
 		// Free checks
-		if (isset($settings["hab_disableforall"]) && $settings["hab_disableforall"] === 'yes') {
+		if ( isset( $settings['hab_disableforall'] ) && 'yes' === $settings['hab_disableforall'] ) {
 			return true;
 		}
-		if ($this->should_hide_for_user_role($settings)) {
+		if ( $this->should_hide_for_user_role( $settings ) ) {
 			return true;
 		}
-		if ($this->should_hide_for_user_capability($settings)) {
+		if ( $this->should_hide_for_user_capability( $settings ) ) {
 			return true;
 		}
-		if ($this->should_hide_for_guests($settings)) {
+		if ( $this->should_hide_for_guests( $settings ) ) {
 			return true;
 		}
-	
-		$pro_conditions = apply_filters('hab_pro_should_hide_admin_bar', false);
-		if ($pro_conditions === true) {
+
+		$pro_conditions = apply_filters( 'hab_pro_should_hide_admin_bar', false );
+		if ( true === $pro_conditions ) {
 			return true;
 		}
-	
+
 		return false;
 	}
 
 	/**
 	 * Check if admin bar should be hidden based on user role
-	 * 
+	 *
 	 * @param array $settings Plugin settings
 	 * @return bool True if admin bar should be hidden
 	 * @since 6.0.0
 	 */
-	private function should_hide_for_user_role($settings) {
-		$plgUserRoles = (isset($settings["hab_userRoles"])) ? $settings["hab_userRoles"] : "";
-		
-		if (is_array($plgUserRoles)) {
-			$curUserObj = wp_get_current_user();
-			if (array_intersect($plgUserRoles, $curUserObj->roles)) {
+	private function should_hide_for_user_role( $settings ) {
+		$plg_user_roles = ( isset( $settings['hab_userRoles'] ) ) ? $settings['hab_userRoles'] : '';
+
+		if ( is_array( $plg_user_roles ) ) {
+			$cur_user_obj = wp_get_current_user();
+			if ( array_intersect( $plg_user_roles, $cur_user_obj->roles ) ) {
 				return true;
 			}
 		}
-		
+
 		return false;
 	}
 
 	/**
 	 * Check if admin bar should be hidden based on user capability
-	 * 
+	 *
 	 * @param array $settings Plugin settings
 	 * @return bool True if admin bar should be hidden
 	 * @since 6.0.0
 	 */
-	private function should_hide_for_user_capability($settings) {
-		$raw_capabilities = (isset($settings["hab_capabilities"])) ? $settings["hab_capabilities"] : "";
+	private function should_hide_for_user_capability( $settings ) {
+		$raw_capabilities = ( isset( $settings['hab_capabilities'] ) ) ? $settings['hab_capabilities'] : '';
 
-		if (!is_string($raw_capabilities) || trim($raw_capabilities) === "") {
+		if ( ! is_string( $raw_capabilities ) || '' === trim( $raw_capabilities ) ) {
 			return false;
 		}
 
 		// explode(",", "") returns array(""), and current_user_can("") returns true
 		// for super admins due to WordPress's super-admin bypass. Trim each entry and
 		// drop empties so we never run a capability check against an empty string.
-		$hab_capabilities = array_filter(array_map('trim', explode(",", $raw_capabilities)), 'strlen');
+		$hab_capabilities = array_filter( array_map( 'trim', explode( ',', $raw_capabilities ) ), 'strlen' );
 
-		foreach ($hab_capabilities as $caps) {
-			if (current_user_can($caps)) {
+		foreach ( $hab_capabilities as $caps ) {
+			if ( current_user_can( $caps ) ) {
 				return true;
 			}
 		}
@@ -162,19 +164,18 @@ class hab_Hide_Admin_Bar_Based_On_User_Roles_Public {
 
 	/**
 	 * Check if admin bar should be hidden for guests
-	 * 
+	 *
 	 * @param array $settings Plugin settings
 	 * @return bool True if admin bar should be hidden
 	 * @since 6.0.0
 	 */
-	private function should_hide_for_guests($settings) {
-		$hab_disableforallGuests = (isset($settings["hab_disableforallGuests"])) ? $settings["hab_disableforallGuests"] : "";
-		
-		if ($hab_disableforallGuests == 'yes' && !is_user_logged_in()) {
+	private function should_hide_for_guests( $settings ) {
+		$hab_disableforall_guests = ( isset( $settings['hab_disableforallGuests'] ) ) ? $settings['hab_disableforallGuests'] : '';
+
+		if ( 'yes' === $hab_disableforall_guests && ! is_user_logged_in() ) {
 			return true;
 		}
-		
+
 		return false;
 	}
-
 }

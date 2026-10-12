@@ -78,7 +78,6 @@ class hab_Hide_Admin_Bar_Based_On_User_Roles {
 		$this->set_locale();
 		$this->define_admin_hooks();
 		$this->define_public_hooks();
-
 	}
 
 	/**
@@ -103,27 +102,26 @@ class hab_Hide_Admin_Bar_Based_On_User_Roles {
 		 * The class responsible for orchestrating the actions and filters of the
 		 * core plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-hide-admin-bar-based-on-user-roles-loader.php';
+		require_once plugin_dir_path( __DIR__ ) . 'includes/class-hide-admin-bar-based-on-user-roles-loader.php';
 
 		/**
 		 * The class responsible for defining internationalization functionality
 		 * of the plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-hide-admin-bar-based-on-user-roles-i18n.php';
+		require_once plugin_dir_path( __DIR__ ) . 'includes/class-hide-admin-bar-based-on-user-roles-i18n.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the admin area.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-hide-admin-bar-based-on-user-roles-admin.php';
+		require_once plugin_dir_path( __DIR__ ) . 'admin/class-hide-admin-bar-based-on-user-roles-admin.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the public-facing
 		 * side of the site.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-hide-admin-bar-based-on-user-roles-public.php';
+		require_once plugin_dir_path( __DIR__ ) . 'public/class-hide-admin-bar-based-on-user-roles-public.php';
 
 		$this->loader = new hab_Hide_Admin_Bar_Based_On_User_Roles_Loader();
-
 	}
 
 	/**
@@ -140,7 +138,6 @@ class hab_Hide_Admin_Bar_Based_On_User_Roles {
 		$plugin_i18n = new hab_Hide_Admin_Bar_Based_On_User_Roles_i18n();
 
 		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
-
 	}
 
 	/**
@@ -161,8 +158,6 @@ class hab_Hide_Admin_Bar_Based_On_User_Roles {
 		$this->loader->add_action( 'upgrader_process_complete', $plugin_admin, 'upgrader_process_complete' );
 		$this->loader->add_action( 'wp_ajax_check_plugin_status', $plugin_admin, 'check_plugin_status' );
 		$this->loader->add_action( 'wp_ajax_silent_install_plugin', $plugin_admin, 'handle_silent_install_plugin' );
-
-		
 	}
 
 	/**
@@ -177,7 +172,6 @@ class hab_Hide_Admin_Bar_Based_On_User_Roles {
 		$plugin_public = new hab_Hide_Admin_Bar_Based_On_User_Roles_Public( $this->get_plugin_name(), $this->get_version() );
 
 		$this->loader->add_action( 'wp', $plugin_public, 'hab_hide_admin_bar' );
-
 	}
 
 	/**
@@ -219,5 +213,4 @@ class hab_Hide_Admin_Bar_Based_On_User_Roles {
 	public function get_version() {
 		return $this->version;
 	}
-
 }

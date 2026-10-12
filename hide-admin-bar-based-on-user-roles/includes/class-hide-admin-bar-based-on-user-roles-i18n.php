@@ -39,9 +39,5 @@ class hab_Hide_Admin_Bar_Based_On_User_Roles_i18n {
 			false,
 			dirname( dirname( plugin_basename( __FILE__ ) ) ) . '/languages/'
 		);
-
 	}
-
-
-
 }

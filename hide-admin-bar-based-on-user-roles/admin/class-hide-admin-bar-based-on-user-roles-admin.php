@@ -54,8 +54,7 @@ class hab_Hide_Admin_Bar_Based_On_User_Roles_Admin {
 		$this->version     = $version;
 
 		// Add AJAX action for dismissing review banner
-		add_action('wp_ajax_hab_dismiss_review_banner', array($this, 'hab_dismiss_review_banner'));
-
+		add_action( 'wp_ajax_hab_dismiss_review_banner', array( $this, 'hab_dismiss_review_banner' ) );
 	}
 
 	/**
@@ -77,10 +76,9 @@ class hab_Hide_Admin_Bar_Based_On_User_Roles_Admin {
 		 * class.
 		 */
 
-		if ( isset( $_GET['page'] ) && $_GET['page'] == 'hide-admin-bar-settings' ) {
+		if ( isset( $_GET['page'] ) && 'hide-admin-bar-settings' === $_GET['page'] ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Only checks which admin page is open.
 			wp_enqueue_style( $this->plugin_name . '-admin', plugin_dir_url( __FILE__ ) . 'css/hide-admin-bar-based-on-user-roles-admin.css', array( 'dashicons' ), $this->version, 'all' );
 		}
-
 	}
 
 	/**
@@ -101,7 +99,7 @@ class hab_Hide_Admin_Bar_Based_On_User_Roles_Admin {
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
-		if ( isset( $_GET['page'] ) && $_GET['page'] == 'hide-admin-bar-settings' ) {
+		if ( isset( $_GET['page'] ) && 'hide-admin-bar-settings' === $_GET['page'] ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Only checks which admin page is open.
 			wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/hide-admin-bar-based-on-user-roles-admin.js', array( 'jquery' ), $this->version, true );
 			$args = array(
 				'url'          => admin_url( 'admin-ajax.php' ),
@@ -118,28 +116,32 @@ class hab_Hide_Admin_Bar_Based_On_User_Roles_Admin {
 			);
 			wp_localize_script( $this->plugin_name, 'ajaxVar', $args );
 		}
-
-
 	}
 
 
 	public function generate_admin_menu_page() {
 
-		add_options_page( __( 'Hide Admin Bar Settings', 'hide-admin-bar-based-on-user-roles' ), __( 'Hide Admin Bar Settings', 'hide-admin-bar-based-on-user-roles' ), 'manage_options', 'hide-admin-bar-settings', array(
-			$this,
-			'hide_admin_bar_settings'
-		) );
-
+		add_options_page(
+			__( 'Hide Admin Bar Settings', 'hide-admin-bar-based-on-user-roles' ),
+			__( 'Hide Admin Bar Settings', 'hide-admin-bar-based-on-user-roles' ),
+			'manage_options',
+			'hide-admin-bar-settings',
+			array(
+				$this,
+				'hide_admin_bar_settings',
+			)
+		);
 	}
 
 	public function hide_admin_bar_settings() {
 
-		$settings      = get_option( "hab_settings" );
-		$hab_reset_key = get_option( "hab_reset_key" );
+		$settings      = get_option( 'hab_settings' );
+		$hab_reset_key = get_option( 'hab_reset_key' );
 
-		if ( ! empty( $hab_reset_key ) && isset( $_GET["reset_plugin"] ) && $_GET["reset_plugin"] == $hab_reset_key ) {
-			update_option( "hab_settings", "" );
-			update_option( "hab_reset_key", rand( 0, 999999999 ) );
+		// The secret reset key in the link stands in for a nonce; only administrators see the link.
+		if ( ! empty( $hab_reset_key ) && isset( $_GET['reset_plugin'] ) && sanitize_text_field( wp_unslash( $_GET['reset_plugin'] ) ) === (string) $hab_reset_key ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+			update_option( 'hab_settings', '' );
+			update_option( 'hab_reset_key', wp_rand( 0, 999999999 ) );
 			echo '<script>window.location.reload();</script>';
 		}
 
@@ -163,7 +165,6 @@ class hab_Hide_Admin_Bar_Based_On_User_Roles_Admin {
 		);
 
 		include plugin_dir_path( __FILE__ ) . 'partials/hide-admin-bar-based-on-user-roles-admin-display.php';
-
 	}
 
 	public function save_user_roles() {
@@ -172,29 +173,29 @@ class hab_Hide_Admin_Bar_Based_On_User_Roles_Admin {
 		if ( current_user_can( 'manage_options' ) && wp_verify_nonce( $_POST['hbaNonce'], 'hba-nonce' ) ) {
 
 			// Sanitize and validate all inputs
-			$UserRoles      = isset($_REQUEST['UserRoles']) ? array_map('sanitize_text_field', (array)$_REQUEST['UserRoles']) : array();
-			$caps           = isset($_REQUEST['caps']) ? sanitize_text_field(str_replace("&nbsp;", "", $_REQUEST['caps'])) : '';
-			$disableForAll  = isset($_REQUEST['disableForAll']) ? sanitize_text_field($_REQUEST['disableForAll']) : 'no';
-			$forGuests      = isset($_REQUEST['forGuests']) ? sanitize_text_field($_REQUEST['forGuests']) : 'no';
+			$user_roles      = isset( $_REQUEST['UserRoles'] ) ? array_map( 'sanitize_text_field', (array) $_REQUEST['UserRoles'] ) : array();
+			$caps            = isset( $_REQUEST['caps'] ) ? sanitize_text_field( str_replace( '&nbsp;', '', $_REQUEST['caps'] ) ) : '';
+			$disable_for_all = isset( $_REQUEST['disableForAll'] ) ? sanitize_text_field( $_REQUEST['disableForAll'] ) : 'no';
+			$for_guests      = isset( $_REQUEST['forGuests'] ) ? sanitize_text_field( $_REQUEST['forGuests'] ) : 'no';
 
 			// Validate disableForAll is either 'yes' or 'no'
-			$disableForAll = in_array($disableForAll, array('yes', 'no')) ? $disableForAll : 'no';
-			
+			$disable_for_all = in_array( $disable_for_all, array( 'yes', 'no' ), true ) ? $disable_for_all : 'no';
+
 			// Validate forGuests is either 'yes' or 'no'
-			$forGuests = in_array($forGuests, array('yes', 'no')) ? $forGuests : 'no';
+			$for_guests = in_array( $for_guests, array( 'yes', 'no' ), true ) ? $for_guests : 'no';
 
 			$settings                      = array();
-			$settings['hab_disableforall'] = $disableForAll;
+			$settings['hab_disableforall'] = $disable_for_all;
 
-			if ( $disableForAll == 'no' ) {
-				$settings['hab_userRoles']           = $UserRoles;
+			if ( 'no' === $disable_for_all ) {
+				$settings['hab_userRoles']           = $user_roles;
 				$settings['hab_capabilities']        = $caps;
-				$settings['hab_disableforallGuests'] = $forGuests;
+				$settings['hab_disableforallGuests'] = $for_guests;
 			}
-			update_option( "hab_settings", $settings );
-			echo "Success";
+			update_option( 'hab_settings', $settings );
+			echo 'Success';
 		} else {
-			echo "Failed";
+			echo 'Failed';
 		}
 		wp_die();
 	}
@@ -203,156 +204,163 @@ class hab_Hide_Admin_Bar_Based_On_User_Roles_Admin {
 	}
 
 	public function enqueue_silent_installer() {
-    }
+	}
 
-    public function check_plugin_status() {
-        // Check nonce
-        if (!check_ajax_referer('silent_installer', 'nonce', false)) {
-            wp_send_json_error(array('message' => 'Invalid security token.'));
-        }
+	public function check_plugin_status() {
+		// Check nonce
+		if ( ! check_ajax_referer( 'silent_installer', 'nonce', false ) ) {
+			wp_send_json_error( array( 'message' => 'Invalid security token.' ) );
+		}
 
-        // Check user capabilities
-        if (!current_user_can('install_plugins')) {
-            wp_send_json_error(array('message' => 'You do not have permission to install plugins.'));
-        }
+		// Check user capabilities
+		if ( ! current_user_can( 'install_plugins' ) ) {
+			wp_send_json_error( array( 'message' => 'You do not have permission to install plugins.' ) );
+		}
 
-        $plugin_slug = sanitize_text_field($_POST['plugin_slug']);
-        
-        if (empty($plugin_slug)) {
-            wp_send_json_error(array('message' => 'Plugin slug is required.'));
-        }
+		$plugin_slug = sanitize_text_field( $_POST['plugin_slug'] );
 
-        require_once ABSPATH . 'wp-admin/includes/plugin.php';
-        
-        $all_plugins = get_plugins();
-        $plugin_base_file = false;
-        
-        foreach ($all_plugins as $file => $plugin) {
-            if (strpos($file, $plugin_slug . '/') === 0) {
-                $plugin_base_file = $file;
-                break;
-            }
-        }
+		if ( empty( $plugin_slug ) ) {
+			wp_send_json_error( array( 'message' => 'Plugin slug is required.' ) );
+		}
 
-        wp_send_json_success(array(
-            'installed' => !empty($plugin_base_file),
-            'active' => !empty($plugin_base_file) && is_plugin_active($plugin_base_file)
-        ));
-    }
+		require_once ABSPATH . 'wp-admin/includes/plugin.php';
 
-    public function handle_silent_install_plugin() {
-        // Check nonce
-        if (!check_ajax_referer('silent_installer', 'nonce', false)) {
-            wp_send_json_error(array('message' => 'Invalid security token.'));
-        }
+		$all_plugins      = get_plugins();
+		$plugin_base_file = false;
 
-        // Check user capabilities
-        if (!current_user_can('install_plugins')) {
-            wp_send_json_error(array('message' => 'You do not have permission to install plugins.'));
-        }
+		foreach ( $all_plugins as $file => $plugin ) {
+			if ( 0 === strpos( $file, $plugin_slug . '/' ) ) {
+				$plugin_base_file = $file;
+				break;
+			}
+		}
 
-        $plugin_slug = sanitize_text_field($_POST['plugin_slug']);
-        
-        if (empty($plugin_slug)) {
-            wp_send_json_error(array('message' => 'Plugin slug is required.'));
-        }
+		wp_send_json_success(
+			array(
+				'installed' => ! empty( $plugin_base_file ),
+				'active'    => ! empty( $plugin_base_file ) && is_plugin_active( $plugin_base_file ),
+			)
+		);
+	}
 
-        // Include required files
-        require_once ABSPATH . 'wp-admin/includes/plugin.php';
-        require_once ABSPATH . 'wp-admin/includes/plugin-install.php';
-        require_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
-        require_once ABSPATH . 'wp-admin/includes/class-plugin-upgrader.php';
+	public function handle_silent_install_plugin() {
+		// Check nonce
+		if ( ! check_ajax_referer( 'silent_installer', 'nonce', false ) ) {
+			wp_send_json_error( array( 'message' => 'Invalid security token.' ) );
+		}
 
-        // Check if plugin is already installed
-        $installed_plugins = get_plugins();
-        $plugin_base_file = false;
+		// Check user capabilities
+		if ( ! current_user_can( 'install_plugins' ) ) {
+			wp_send_json_error( array( 'message' => 'You do not have permission to install plugins.' ) );
+		}
 
-        foreach ($installed_plugins as $file => $plugin) {
-            if (strpos($file, $plugin_slug . '/') === 0) {
-                $plugin_base_file = $file;
-                break;
-            }
-        }
+		$plugin_slug = sanitize_text_field( $_POST['plugin_slug'] );
 
-        // If plugin is not installed, install it
-        if (!$plugin_base_file) {
-            try {
-                // Get plugin info
-                $api = plugins_api('plugin_information', array(
-                    'slug' => $plugin_slug,
-                    'fields' => array(
-                        'short_description' => false,
-                        'sections' => false,
-                        'requires' => false,
-                        'rating' => false,
-                        'ratings' => false,
-                        'downloaded' => false,
-                        'last_updated' => false,
-                        'added' => false,
-                        'tags' => false,
-                        'compatibility' => false,
-                        'homepage' => false,
-                        'donate_link' => false,
-                    ),
-                ));
+		if ( empty( $plugin_slug ) ) {
+			wp_send_json_error( array( 'message' => 'Plugin slug is required.' ) );
+		}
 
-                if (is_wp_error($api)) {
-                    wp_send_json_error(array('message' => $api->get_error_message()));
-                }
+		// Include required files
+		require_once ABSPATH . 'wp-admin/includes/plugin.php';
+		require_once ABSPATH . 'wp-admin/includes/plugin-install.php';
+		require_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
+		require_once ABSPATH . 'wp-admin/includes/class-plugin-upgrader.php';
 
-                $upgrader = new Plugin_Upgrader(new WP_Ajax_Upgrader_Skin());
-                $install_result = $upgrader->install($api->download_link);
+		// Check if plugin is already installed
+		$installed_plugins = get_plugins();
+		$plugin_base_file  = false;
 
-                if (is_wp_error($install_result)) {
-                    wp_send_json_error(array('message' => $install_result->get_error_message()));
-                }
+		foreach ( $installed_plugins as $file => $plugin ) {
+			if ( 0 === strpos( $file, $plugin_slug . '/' ) ) {
+				$plugin_base_file = $file;
+				break;
+			}
+		}
 
-                $plugin_base_file = $upgrader->plugin_info();
+		// If plugin is not installed, install it
+		if ( ! $plugin_base_file ) {
+			try {
+				// Get plugin info
+				$api = plugins_api(
+					'plugin_information',
+					array(
+						'slug'   => $plugin_slug,
+						'fields' => array(
+							'short_description' => false,
+							'sections'          => false,
+							'requires'          => false,
+							'rating'            => false,
+							'ratings'           => false,
+							'downloaded'        => false,
+							'last_updated'      => false,
+							'added'             => false,
+							'tags'              => false,
+							'compatibility'     => false,
+							'homepage'          => false,
+							'donate_link'       => false,
+						),
+					)
+				);
 
-            } catch (Exception $e) {
-                wp_send_json_error(array('message' => $e->getMessage()));
-            }
-        }
+				if ( is_wp_error( $api ) ) {
+					wp_send_json_error( array( 'message' => $api->get_error_message() ) );
+				}
 
-        // Activate the plugin
-        if ($plugin_base_file) {
-            try {
-                $activation_result = activate_plugin($plugin_base_file);
-                
-                if (is_wp_error($activation_result)) {
-                    wp_send_json_error(array('message' => $activation_result->get_error_message()));
-                }
+				$upgrader       = new Plugin_Upgrader( new WP_Ajax_Upgrader_Skin() );
+				$install_result = $upgrader->install( $api->download_link );
 
-                wp_send_json_success(array(
-                    'message' => 'Plugin installed and activated successfully',
-                    'plugin_file' => $plugin_base_file
-                ));
+				if ( is_wp_error( $install_result ) ) {
+					wp_send_json_error( array( 'message' => $install_result->get_error_message() ) );
+				}
 
-            } catch (Exception $e) {
-                wp_send_json_error(array('message' => $e->getMessage()));
-            }
-        } else {
-            wp_send_json_error(array('message' => 'Plugin installation failed.'));
-        }
-    }
+				$plugin_base_file = $upgrader->plugin_info();
 
-    public function hab_dismiss_review_banner() {
-        if (!check_ajax_referer('hab_dismiss_review_nonce', 'nonce', false)) {
-            wp_send_json_error('Invalid nonce');
-        }
+			} catch ( Exception $e ) {
+				wp_send_json_error( array( 'message' => $e->getMessage() ) );
+			}
+		}
 
-        $user_id = get_current_user_id();
-        $dismiss_type = sanitize_text_field($_POST['dismiss_type']);
+		// Activate the plugin
+		if ( $plugin_base_file ) {
+			try {
+				$activation_result = activate_plugin( $plugin_base_file );
 
-        if ($dismiss_type === 'permanent') {
-            update_user_meta($user_id, 'hab_hide_review_banner', 'permanent');
-        } else if ($dismiss_type === '30days') {
-            update_user_meta($user_id, 'hab_hide_review_until', time() + (30 * DAY_IN_SECONDS));
-        } else if ($dismiss_type === 'now') {
-            // Set to show again after 15 days
-            update_user_meta($user_id, 'hab_hide_review_until', time() + (15 * DAY_IN_SECONDS));
-        }
+				if ( is_wp_error( $activation_result ) ) {
+					wp_send_json_error( array( 'message' => $activation_result->get_error_message() ) );
+				}
 
-        wp_send_json_success();
-    }
+				wp_send_json_success(
+					array(
+						'message'     => 'Plugin installed and activated successfully',
+						'plugin_file' => $plugin_base_file,
+					)
+				);
+
+			} catch ( Exception $e ) {
+				wp_send_json_error( array( 'message' => $e->getMessage() ) );
+			}
+		} else {
+			wp_send_json_error( array( 'message' => 'Plugin installation failed.' ) );
+		}
+	}
+
+	public function hab_dismiss_review_banner() {
+		if ( ! check_ajax_referer( 'hab_dismiss_review_nonce', 'nonce', false ) ) {
+			wp_send_json_error( 'Invalid nonce' );
+		}
+
+		$user_id      = get_current_user_id();
+		$dismiss_type = sanitize_text_field( $_POST['dismiss_type'] );
+
+		if ( 'permanent' === $dismiss_type ) {
+			update_user_meta( $user_id, 'hab_hide_review_banner', 'permanent' );
+		} elseif ( '30days' === $dismiss_type ) {
+			update_user_meta( $user_id, 'hab_hide_review_until', time() + ( 30 * DAY_IN_SECONDS ) );
+		} elseif ( 'now' === $dismiss_type ) {
+			// Set to show again after 15 days
+			update_user_meta( $user_id, 'hab_hide_review_until', time() + ( 15 * DAY_IN_SECONDS ) );
+		}
+
+		wp_send_json_success();
+	}
 }

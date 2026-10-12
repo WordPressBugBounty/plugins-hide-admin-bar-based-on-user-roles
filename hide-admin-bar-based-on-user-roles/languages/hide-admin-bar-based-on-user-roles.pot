@@ -2,14 +2,14 @@
 # This file is distributed under the GPL-2.0+.
 msgid ""
 msgstr ""
-"Project-Id-Version: Hide Admin Bar Based on User Roles 7.3.0\n"
+"Project-Id-Version: Hide Admin Bar Based on User Roles 7.5.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/hide-admin-bar-based-on-user-roles\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-09-24T08:50:07+00:00\n"
+"POT-Creation-Date: 2026-10-12T13:38:00+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.7.1\n"
 "X-Domain: hide-admin-bar-based-on-user-roles\n"
@@ -34,33 +34,36 @@ msgstr ""
 msgid "https://wpankit.com/"
 msgstr ""
 
-#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:111
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:109
 msgid "Saving…"
 msgstr ""
 
-#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:112
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:110
 msgid "Settings saved."
 msgstr ""
 
-#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:113
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:111
 msgid "The settings couldn’t be saved. Reload the page and try again."
 msgstr ""
 
 #. translators: %s: capability name.
-#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:115
-#: admin/partials/hide-admin-bar-based-on-user-roles-admin-display.php:98
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:113
+#: admin/partials/hide-admin-bar-based-on-user-roles-admin-display.php:100
 msgid "Remove %s"
 msgstr ""
 
-#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:116
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:114
 msgid "Reset all Hide Admin Bar settings? The admin bar will show again for everyone."
 msgstr ""
 
-#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:128
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:125
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:126
+#: modules/class-hab-modules-admin.php:96
 msgid "Hide Admin Bar Settings"
 msgstr ""
 
 #: admin/partials/hide-admin-bar-based-on-user-roles-admin-display.php:24
+#: modules/partials/settings-page.php:23
 msgid "Hide Admin Bar"
 msgstr ""
 
@@ -70,84 +73,88 @@ msgstr ""
 
 #. translators: %s: plugin version number.
 #: admin/partials/hide-admin-bar-based-on-user-roles-admin-display.php:31
+#: modules/partials/settings-page.php:30
 msgid "Version %s"
 msgstr ""
 
 #: admin/partials/hide-admin-bar-based-on-user-roles-admin-display.php:34
+#: modules/partials/settings-page.php:33
 msgid "Get support"
 msgstr ""
 
 #: admin/partials/hide-admin-bar-based-on-user-roles-admin-display.php:35
 #: admin/partials/review-banner.php:36
+#: modules/partials/settings-page.php:34
 msgid "Leave a review"
 msgstr ""
 
-#: admin/partials/hide-admin-bar-based-on-user-roles-admin-display.php:46
+#: admin/partials/hide-admin-bar-based-on-user-roles-admin-display.php:48
 msgid "Who shouldn’t see the admin bar?"
 msgstr ""
 
-#: admin/partials/hide-admin-bar-based-on-user-roles-admin-display.php:47
-msgid "These rules apply to the front end of your site. Inside the dashboard, WordPress always shows the admin bar."
+#: admin/partials/hide-admin-bar-based-on-user-roles-admin-display.php:49
+msgid "These rules apply to the front end of your site. To hide the admin bar inside the dashboard too, use the Dashboard & login tab."
 msgstr ""
 
-#: admin/partials/hide-admin-bar-based-on-user-roles-admin-display.php:52
+#: admin/partials/hide-admin-bar-based-on-user-roles-admin-display.php:54
 msgid "Hide for everyone"
 msgstr ""
 
-#: admin/partials/hide-admin-bar-based-on-user-roles-admin-display.php:53
+#: admin/partials/hide-admin-bar-based-on-user-roles-admin-display.php:55
 msgid "Remove the admin bar for every logged-in user, administrators included. Saving with this on clears the rules below."
 msgstr ""
 
-#: admin/partials/hide-admin-bar-based-on-user-roles-admin-display.php:59
+#: admin/partials/hide-admin-bar-based-on-user-roles-admin-display.php:61
 msgid "Rules for specific visitors, roles and capabilities"
 msgstr ""
 
-#: admin/partials/hide-admin-bar-based-on-user-roles-admin-display.php:60
+#: admin/partials/hide-admin-bar-based-on-user-roles-admin-display.php:62
 msgid "Turn off “Hide for everyone” to use these rules."
 msgstr ""
 
-#: admin/partials/hide-admin-bar-based-on-user-roles-admin-display.php:64
+#: admin/partials/hide-admin-bar-based-on-user-roles-admin-display.php:66
 msgid "Hide for logged-out visitors"
 msgstr ""
 
-#: admin/partials/hide-admin-bar-based-on-user-roles-admin-display.php:65
+#: admin/partials/hide-admin-bar-based-on-user-roles-admin-display.php:67
 msgid "WordPress doesn’t show the admin bar to logged-out visitors, but some plugins, such as BuddyPress, can. This makes sure they never see it."
 msgstr ""
 
-#: admin/partials/hide-admin-bar-based-on-user-roles-admin-display.php:72
+#: admin/partials/hide-admin-bar-based-on-user-roles-admin-display.php:74
 msgid "Hide for these roles"
 msgstr ""
 
-#: admin/partials/hide-admin-bar-based-on-user-roles-admin-display.php:73
+#: admin/partials/hide-admin-bar-based-on-user-roles-admin-display.php:75
 msgid "Users with any of the selected roles won’t see the admin bar."
 msgstr ""
 
-#: admin/partials/hide-admin-bar-based-on-user-roles-admin-display.php:86
+#: admin/partials/hide-admin-bar-based-on-user-roles-admin-display.php:88
 msgid "Hide for users with these capabilities"
 msgstr ""
 
 #. translators: %s: example capability name, such as edit_posts.
-#: admin/partials/hide-admin-bar-based-on-user-roles-admin-display.php:90
+#: admin/partials/hide-admin-bar-based-on-user-roles-admin-display.php:92
 msgid "Users who have any of these capabilities won’t see the admin bar. Type a capability, such as %s, and press Enter."
 msgstr ""
 
-#: admin/partials/hide-admin-bar-based-on-user-roles-admin-display.php:106
+#: admin/partials/hide-admin-bar-based-on-user-roles-admin-display.php:108
 msgid "Add a capability"
 msgstr ""
 
-#: admin/partials/hide-admin-bar-based-on-user-roles-admin-display.php:112
+#: admin/partials/hide-admin-bar-based-on-user-roles-admin-display.php:114
+#: modules/partials/settings-page.php:66
 msgid "Save changes"
 msgstr ""
 
-#: admin/partials/hide-admin-bar-based-on-user-roles-admin-display.php:120
+#: admin/partials/hide-admin-bar-based-on-user-roles-admin-display.php:122
 msgid "Reset settings"
 msgstr ""
 
-#: admin/partials/hide-admin-bar-based-on-user-roles-admin-display.php:122
+#: admin/partials/hide-admin-bar-based-on-user-roles-admin-display.php:124
 msgid "Clear every rule and go back to the defaults. The admin bar will show again for everyone."
 msgstr ""
 
-#: admin/partials/hide-admin-bar-based-on-user-roles-admin-display.php:123
+#: admin/partials/hide-admin-bar-based-on-user-roles-admin-display.php:125
 msgid "Reset all settings"
 msgstr ""
 
@@ -206,4 +213,420 @@ msgstr ""
 
 #: admin/partials/review-banner.php:38
 msgid "Don’t show again"
+msgstr ""
+
+#: modules/class-hab-admin-items.php:203
+msgid "WordPress logo menu"
+msgstr ""
+
+#: modules/class-hab-admin-items.php:204
+msgid "Site name, with links to the site and the dashboard"
+msgstr ""
+
+#: modules/class-hab-admin-items.php:205
+msgid "Updates"
+msgstr ""
+
+#: modules/class-hab-admin-items.php:206
+msgid "Comments"
+msgstr ""
+
+#: modules/class-hab-admin-items.php:207
+msgid "+ New"
+msgstr ""
+
+#: modules/class-hab-admin-items.php:208
+msgid "Command palette shortcut"
+msgstr ""
+
+#: modules/class-hab-admin-items.php:209
+msgid "Edit link on posts and pages"
+msgstr ""
+
+#: modules/class-hab-admin-items.php:210
+msgid "Edit site"
+msgstr ""
+
+#: modules/class-hab-admin-items.php:211
+msgid "Customize"
+msgstr ""
+
+#: modules/class-hab-admin-items.php:212
+msgid "Search"
+msgstr ""
+
+#: modules/class-hab-admin-items.php:213
+msgid "Account menu, with Edit profile and Log out"
+msgstr ""
+
+#: modules/class-hab-admin-items.php:216
+msgid "My Sites"
+msgstr ""
+
+#: modules/class-hab-admin-items.php:249
+msgid "Welcome"
+msgstr ""
+
+#: modules/class-hab-admin-items.php:250
+msgid "Site Health Status"
+msgstr ""
+
+#: modules/class-hab-admin-items.php:251
+msgid "At a Glance"
+msgstr ""
+
+#: modules/class-hab-admin-items.php:252
+msgid "Activity"
+msgstr ""
+
+#: modules/class-hab-admin-items.php:253
+msgid "Quick Draft"
+msgstr ""
+
+#: modules/class-hab-admin-items.php:254
+msgid "WordPress Events and News"
+msgstr ""
+
+#: modules/class-hab-modules-admin.php:60
+#: modules/partials/section-admin-menu.php:32
+msgid "Dashboard & login"
+msgstr ""
+
+#: modules/class-hab-modules-admin.php:64
+msgid "Admin cleanup"
+msgstr ""
+
+#: modules/class-hab-modules-admin.php:68
+msgid "Compatibility"
+msgstr ""
+
+#: modules/class-hab-modules-admin.php:173
+#: modules/partials/section-dashboard-access.php:72
+#: modules/partials/section-strict-mode.php:32
+msgid "Admin bar"
+msgstr ""
+
+#: modules/class-hab-modules-admin.php:178
+msgid "Hide Admin Bar settings"
+msgstr ""
+
+#: modules/class-hab-modules-settings.php:150
+#: modules/partials/section-dashboard-access.php:20
+msgid "Dashboard access"
+msgstr ""
+
+#: modules/class-hab-modules-settings.php:157
+msgid "Dashboard access: pick a page outside the dashboard, or leave the field empty to use your home page."
+msgstr ""
+
+#. translators: %s: user role name, such as Subscriber.
+#: modules/class-hab-modules-settings.php:201
+msgid "Login redirect for %s"
+msgstr ""
+
+#. translators: 1: name of the setting, 2: example address on this site.
+#: modules/class-hab-modules-settings.php:402
+msgid "%1$s: enter a page on this site, such as %2$s"
+msgstr ""
+
+#: modules/class-hab-switch-user.php:105
+#: modules/class-hab-switch-user.php:121
+#: modules/class-hab-switch-user.php:149
+msgid "Switch to"
+msgstr ""
+
+#: modules/class-hab-switch-user.php:143
+msgid "Not available"
+msgstr ""
+
+#. translators: %s: user's display name.
+#: modules/class-hab-switch-user.php:147
+msgid "Switch to %s"
+msgstr ""
+
+#: modules/class-hab-switch-user.php:172
+msgid "You can’t switch to this user."
+msgstr ""
+
+#: modules/class-hab-switch-user.php:178
+msgid "Your login couldn’t be checked. Log out, log in again and try once more."
+msgstr ""
+
+#: modules/class-hab-switch-user.php:239
+msgid "Your administrator login has expired. Log out, then log in as yourself again."
+msgstr ""
+
+#: modules/class-hab-switch-user.php:306
+msgid "Switched user"
+msgstr ""
+
+#. translators: 1: user's display name, 2: user's roles.
+#: modules/class-hab-switch-user.php:311
+msgid "Viewing as %1$s (%2$s)"
+msgstr ""
+
+#. translators: %s: administrator's display name.
+#: modules/class-hab-switch-user.php:320
+msgid "Switch back to %s"
+msgstr ""
+
+#: modules/partials/emergency-switch.php:18
+msgid "If something goes wrong"
+msgstr ""
+
+#: modules/partials/emergency-switch.php:19
+msgid "If a rule on the Dashboard & login, Admin cleanup or Compatibility tab locks someone out, add this line to wp-config.php. It switches those features off and keeps your settings. The rules on the Admin bar tab keep working."
+msgstr ""
+
+#. translators: 1: item name, 2: role name.
+#: modules/partials/role-grid.php:65
+msgid "Hide %1$s for %2$s"
+msgstr ""
+
+#: modules/partials/section-admin-bar-items.php:20
+msgid "Admin bar items"
+msgstr ""
+
+#: modules/partials/section-admin-bar-items.php:21
+msgid "Keep the admin bar, but remove the items a role doesn’t need, such as the WordPress logo, Comments or + New."
+msgstr ""
+
+#: modules/partials/section-admin-bar-items.php:26
+msgid "Remove admin bar items"
+msgstr ""
+
+#: modules/partials/section-admin-bar-items.php:27
+msgid "Applies on your site and in the dashboard. Some items, such as Customize and Search, only appear on your site."
+msgstr ""
+
+#: modules/partials/section-admin-bar-items.php:34
+msgid "Tick an item in a role’s column to remove it for that role. Removing the account menu also removes its Log out link."
+msgstr ""
+
+#: modules/partials/section-admin-bar-items.php:39
+msgid "Admin bar item"
+msgstr ""
+
+#: modules/partials/section-admin-menu.php:20
+msgid "Admin menu"
+msgstr ""
+
+#: modules/partials/section-admin-menu.php:21
+msgid "Hide menu items that a role doesn’t need, so the dashboard shows only what matters to them."
+msgstr ""
+
+#: modules/partials/section-admin-menu.php:26
+msgid "Hide admin menu items"
+msgstr ""
+
+#. translators: %s: link to the Dashboard & login tab.
+#: modules/partials/section-admin-menu.php:31
+msgid "This tidies the menu but doesn’t lock the screens: someone who knows the address can still open them. To keep a role out of the dashboard, use Dashboard access on the %s tab."
+msgstr ""
+
+#: modules/partials/section-admin-menu.php:42
+msgid "Tick an item in a role’s column to hide it for that role. Hiding a menu hides everything under it. Settings always stays, so you can get back here."
+msgstr ""
+
+#: modules/partials/section-admin-menu.php:47
+msgid "Menu item"
+msgstr ""
+
+#: modules/partials/section-admin-notices.php:20
+msgid "Admin notices"
+msgstr ""
+
+#: modules/partials/section-admin-notices.php:21
+msgid "Hide the notices that WordPress, themes and plugins show at the top of dashboard screens."
+msgstr ""
+
+#: modules/partials/section-admin-notices.php:26
+msgid "Hide admin notices"
+msgstr ""
+
+#: modules/partials/section-admin-notices.php:27
+msgid "This hides every notice for these roles, including update reminders and messages such as “Settings saved” that some plugins show as notices."
+msgstr ""
+
+#: modules/partials/section-admin-notices.php:35
+#: modules/partials/section-dashboard-admin-bar.php:35
+msgid "For these roles"
+msgstr ""
+
+#: modules/partials/section-admin-notices.php:36
+msgid "Users with any of these roles won’t see admin notices."
+msgstr ""
+
+#: modules/partials/section-dashboard-access.php:21
+msgid "Keep selected roles out of wp-admin. When they try to open it, they’re sent to the page you choose."
+msgstr ""
+
+#: modules/partials/section-dashboard-access.php:26
+msgid "Block the dashboard"
+msgstr ""
+
+#: modules/partials/section-dashboard-access.php:27
+msgid "Administrators always keep access. Background requests that themes and plugins rely on keep working."
+msgstr ""
+
+#: modules/partials/section-dashboard-access.php:35
+msgid "Block these roles"
+msgstr ""
+
+#: modules/partials/section-dashboard-access.php:36
+msgid "Users with any of these roles can’t open the dashboard. Roles that can manage the site aren’t listed."
+msgstr ""
+
+#: modules/partials/section-dashboard-access.php:54
+msgid "Send them to"
+msgstr ""
+
+#: modules/partials/section-dashboard-access.php:55
+msgid "A page on this site. Leave it empty to use your home page."
+msgstr ""
+
+#: modules/partials/section-dashboard-access.php:61
+msgid "Let them edit their profile"
+msgstr ""
+
+#: modules/partials/section-dashboard-access.php:62
+msgid "Keeps the Profile screen open so they can change their name, email address or password."
+msgstr ""
+
+#. translators: %s: link to the Admin bar tab.
+#: modules/partials/section-dashboard-access.php:71
+msgid "Blocked users still see the admin bar on your site unless you hide it for them on the %s tab."
+msgstr ""
+
+#: modules/partials/section-dashboard-admin-bar.php:20
+msgid "Admin bar in the dashboard"
+msgstr ""
+
+#: modules/partials/section-dashboard-admin-bar.php:21
+msgid "WordPress always shows the admin bar inside wp-admin. Hide it there for the roles you pick."
+msgstr ""
+
+#: modules/partials/section-dashboard-admin-bar.php:26
+msgid "Hide it in the dashboard"
+msgstr ""
+
+#: modules/partials/section-dashboard-admin-bar.php:27
+msgid "On phones and small tablets the admin bar stays, because it holds the button that opens the WordPress menu."
+msgstr ""
+
+#: modules/partials/section-dashboard-admin-bar.php:36
+msgid "Users with any of these roles won’t see the admin bar inside the dashboard."
+msgstr ""
+
+#: modules/partials/section-dashboard-widgets.php:20
+msgid "Dashboard widgets"
+msgstr ""
+
+#: modules/partials/section-dashboard-widgets.php:21
+msgid "Choose which boxes each role sees on the Dashboard home screen."
+msgstr ""
+
+#: modules/partials/section-dashboard-widgets.php:26
+msgid "Hide dashboard widgets"
+msgstr ""
+
+#: modules/partials/section-dashboard-widgets.php:30
+msgid "Widgets from your plugins are listed as they appeared the last time you opened the Dashboard."
+msgstr ""
+
+#. translators: %s: link to the Dashboard.
+#: modules/partials/section-dashboard-widgets.php:34
+msgid "Only WordPress’s own widgets are listed so far. Open the %s once and widgets from your plugins appear here too."
+msgstr ""
+
+#: modules/partials/section-dashboard-widgets.php:35
+msgid "Dashboard"
+msgstr ""
+
+#: modules/partials/section-dashboard-widgets.php:46
+msgid "Tick a widget in a role’s column to hide it for that role."
+msgstr ""
+
+#: modules/partials/section-dashboard-widgets.php:51
+msgid "Widget"
+msgstr ""
+
+#: modules/partials/section-login-redirect.php:20
+msgid "Login redirect"
+msgstr ""
+
+#: modules/partials/section-login-redirect.php:21
+msgid "Choose where each role lands after logging in, instead of the dashboard."
+msgstr ""
+
+#: modules/partials/section-login-redirect.php:26
+msgid "Redirect after login"
+msgstr ""
+
+#: modules/partials/section-login-redirect.php:27
+msgid "Works with the WordPress login form. Login links that ask for a specific page, such as “Log in to comment”, still go to that page."
+msgstr ""
+
+#: modules/partials/section-login-redirect.php:35
+msgid "Page for each role"
+msgstr ""
+
+#. translators: %s: example path, such as /my-account/.
+#: modules/partials/section-login-redirect.php:40
+msgid "Enter a page on this site, such as %s. Leave a role empty to keep the WordPress default."
+msgstr ""
+
+#: modules/partials/section-login-redirect.php:50
+msgid "WordPress default"
+msgstr ""
+
+#: modules/partials/section-strict-mode.php:20
+msgid "Strict mode"
+msgstr ""
+
+#: modules/partials/section-strict-mode.php:21
+msgid "Some plugins, such as BuddyPress, wpForo or WC Vendors, turn the admin bar back on after this plugin hides it."
+msgstr ""
+
+#: modules/partials/section-strict-mode.php:26
+msgid "Keep the admin bar hidden"
+msgstr ""
+
+#. translators: %s: link to the Admin bar tab.
+#: modules/partials/section-strict-mode.php:31
+msgid "Applies the rules from the %s tab once more, after every other plugin, so they always win. It only affects users those rules already cover."
+msgstr ""
+
+#: modules/partials/section-switch-user.php:20
+msgid "Switch to user"
+msgstr ""
+
+#: modules/partials/section-switch-user.php:21
+msgid "See your site exactly as one of your users does, to check your settings, then switch back in one click."
+msgstr ""
+
+#: modules/partials/section-switch-user.php:26
+msgid "Allow switching to users"
+msgstr ""
+
+#: modules/partials/section-switch-user.php:27
+msgid "Only administrators can switch, and only to users who can’t manage the site. While you’re switched, a bar at the bottom of the screen shows who you’re viewing as."
+msgstr ""
+
+#. translators: %s: link to the Users screen.
+#: modules/partials/section-switch-user.php:37
+msgid "Once it’s on, use the “Switch to” button next to a user on the %s screen."
+msgstr ""
+
+#: modules/partials/section-switch-user.php:38
+msgid "Users"
+msgstr ""
+
+#: modules/partials/settings-page.php:24
+msgid "Choose who sees the admin bar, who can open the dashboard, and where users land after logging in."
+msgstr ""
+
+#. translators: %s: name of the PHP constant.
+#: modules/partials/settings-page.php:47
+msgid "%s is set in wp-config.php, so everything on this tab is switched off. Your settings are kept."
 msgstr ""

@@ -30,7 +30,6 @@ class hab_Hide_Admin_Bar_Based_On_User_Roles_Deactivator {
 	 * @since    1.7.0
 	 */
 	public static function deactivate() {
-		delete_option("hab_reset_key");
+		delete_option( 'hab_reset_key' );
 	}
-
 }

@@ -32,9 +32,7 @@ class hab_Hide_Admin_Bar_Based_On_User_Roles_Activator {
 	public static function activate() {
 		global $wpdb;
 
-		add_option("hab_settings", "" );
-		add_option("hab_reset_key", rand(0,999999999) );
-
+		add_option( 'hab_settings', '' );
+		add_option( 'hab_reset_key', wp_rand( 0, 999999999 ) );
 	}
-
 }

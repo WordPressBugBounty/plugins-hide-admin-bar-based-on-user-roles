@@ -50,7 +50,6 @@ class hab_Hide_Admin_Bar_Based_On_User_Roles_Loader {
 
 		$this->actions = array();
 		$this->filters = array();
-
 	}
 
 	/**
@@ -102,11 +101,10 @@ class hab_Hide_Admin_Bar_Based_On_User_Roles_Loader {
 			'component'     => $component,
 			'callback'      => $callback,
 			'priority'      => $priority,
-			'accepted_args' => $accepted_args
+			'accepted_args' => $accepted_args,
 		);
 
 		return $hooks;
-
 	}
 
 	/**
@@ -123,7 +121,5 @@ class hab_Hide_Admin_Bar_Based_On_User_Roles_Loader {
 		foreach ( $this->actions as $hook ) {
 			add_action( $hook['hook'], array( $hook['component'], $hook['callback'] ), $hook['priority'], $hook['accepted_args'] );
 		}
-
 	}
-
 }

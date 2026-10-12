@@ -1,0 +1,261 @@
+/**
+ * Hide Admin Bar: the settings tabs and the module pages (Dashboard & login, Compatibility).
+ *
+ * The module pages also load the original settings page stylesheet and reuse its cards, switches
+ * and role chips. Everything is scoped to .hab-settings.
+ */
+
+/* Tabs --------------------------------------------------------------- */
+
+.hab-settings .hab-tabs {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 4px;
+	margin: 0 0 24px;
+	border-bottom: 1px solid var(--hab-border);
+}
+
+.hab-settings .hab-tab {
+	margin-bottom: -1px;
+	padding: 10px 14px;
+	border-bottom: 2px solid transparent;
+	color: var(--hab-muted);
+	font-size: 14px;
+	font-weight: 500;
+	text-decoration: none;
+	transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.hab-settings .hab-tab:hover {
+	color: var(--hab-text);
+	border-bottom-color: #a7aaad;
+}
+
+.hab-settings .hab-tab:focus {
+	border-radius: 4px 4px 0 0;
+	outline: 2px solid transparent;
+	box-shadow: 0 0 0 2px var(--hab-accent);
+}
+
+.hab-settings .hab-tab.is-active {
+	color: var(--hab-accent);
+	border-bottom-color: var(--hab-accent);
+	font-weight: 600;
+}
+
+/* Modules ------------------------------------------------------------ */
+
+.hab-settings .hab-module-body {
+	transition: opacity 0.15s ease;
+}
+
+/* A module's options can be set up before it's switched on; they're just dimmed until then. */
+.hab-settings .hab-module:has(.hab-module-toggle:not(:checked)) .hab-module-body {
+	opacity: 0.55;
+}
+
+.hab-settings input[type="text"].hab-url-input {
+	display: block;
+	max-width: 100%;
+	margin-top: 12px;
+}
+
+.hab-settings .hab-module-tip {
+	margin: 0;
+	padding: 12px 24px;
+	background: #f9f9fa;
+	border-top: 1px solid var(--hab-divider);
+	border-radius: 0 0 var(--hab-radius) var(--hab-radius);
+	color: var(--hab-muted);
+}
+
+.hab-settings .hab-redirects {
+	display: grid;
+	gap: 8px;
+	max-width: 640px;
+	margin-top: 12px;
+}
+
+.hab-settings .hab-redirect-row {
+	display: grid;
+	grid-template-columns: 160px minmax(0, 1fr);
+	align-items: center;
+	gap: 12px;
+}
+
+.hab-settings .hab-redirect-row label {
+	font-weight: 500;
+}
+
+.hab-settings .hab-redirect-row input[type="text"] {
+	width: 100%;
+	max-width: none;
+	margin: 0;
+}
+
+.hab-settings .hab-card-body {
+	padding: 0 24px 20px;
+}
+
+.hab-settings .hab-code {
+	display: block;
+	padding: 10px 12px;
+	border-radius: 4px;
+	font-size: 13px;
+	overflow-x: auto;
+	white-space: nowrap;
+}
+
+/* Save bar stays in view while scrolling through the cards. */
+.hab-settings .hab-savebar {
+	position: sticky;
+	bottom: 0;
+	z-index: 2;
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	margin: 0 0 24px;
+	padding: 14px 24px;
+	background: #fff;
+	border: 1px solid var(--hab-border);
+	border-radius: var(--hab-radius);
+	box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.hab-settings .hab-savebar .button {
+	margin: 0;
+}
+
+.hab-settings .hab-switched-off {
+	margin: 0 0 24px;
+}
+
+/* Small screens ------------------------------------------------------ */
+
+@media screen and (max-width: 782px) {
+	.hab-settings .hab-tab {
+		padding: 10px;
+	}
+
+	.hab-settings .hab-module-tip,
+	.hab-settings .hab-savebar {
+		padding-left: 16px;
+		padding-right: 16px;
+	}
+
+	.hab-settings .hab-card-body {
+		padding: 0 16px 16px;
+	}
+
+	.hab-settings .hab-redirect-row {
+		grid-template-columns: minmax(0, 1fr);
+		gap: 4px;
+	}
+
+	.hab-settings .hab-grid th:first-child {
+		min-width: 130px;
+	}
+
+	.hab-settings .hab-grid .hab-grid-role {
+		min-width: 64px;
+	}
+}
+
+/* Grid of items by role (Admin cleanup) ----------------------------- */
+
+.hab-settings .hab-grid-wrap {
+	margin-top: 12px;
+	overflow-x: auto;
+	border: 1px solid var(--hab-border);
+	border-radius: 6px;
+}
+
+.hab-settings .hab-grid {
+	width: 100%;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.hab-settings .hab-grid th,
+.hab-settings .hab-grid td {
+	padding: 9px 10px;
+	border-bottom: 1px solid var(--hab-divider);
+	text-align: center;
+	vertical-align: middle;
+}
+
+.hab-settings .hab-grid thead th,
+.hab-settings .hab-grid tfoot th {
+	background: #f9f9fa;
+	color: var(--hab-muted);
+	font-size: 12px;
+	font-weight: 600;
+	line-height: 1.4;
+}
+
+.hab-settings .hab-grid tfoot th {
+	border-top: 1px solid var(--hab-border);
+	border-bottom: 0;
+}
+
+.hab-settings .hab-grid .hab-grid-role {
+	min-width: 72px;
+}
+
+/* The item column stays in view when the grid scrolls sideways. */
+.hab-settings .hab-grid th:first-child {
+	position: sticky;
+	left: 0;
+	z-index: 1;
+	min-width: 180px;
+	text-align: left;
+	background: #fff;
+}
+
+.hab-settings .hab-grid thead th:first-child,
+.hab-settings .hab-grid tfoot th:first-child {
+	background: #f9f9fa;
+}
+
+.hab-settings .hab-grid tbody th {
+	color: var(--hab-text);
+	font-weight: 500;
+}
+
+.hab-settings .hab-grid tbody tr.is-child th {
+	padding-left: 30px;
+	color: var(--hab-muted);
+	font-weight: 400;
+}
+
+.hab-settings .hab-grid tbody tr:last-child th,
+.hab-settings .hab-grid tbody tr:last-child td {
+	border-bottom: 0;
+}
+
+.hab-settings .hab-grid tbody tr:hover td {
+	background: #fafafa;
+}
+
+.hab-settings .hab-grid td:has(input:checked),
+.hab-settings .hab-grid tbody tr:hover td:has(input:checked) {
+	background: var(--hab-accent-soft);
+}
+
+.hab-settings .hab-grid input[type="checkbox"] {
+	margin: 0;
+}
+
+.hab-settings .hab-grid input[type="checkbox"]:checked {
+	background: var(--hab-accent);
+	border-color: var(--hab-accent);
+}
+
+.hab-settings .hab-grid input[type="checkbox"]:checked::before {
+	content: url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2020%2020%27%3E%3Cpath%20d%3D%27M14.83%204.89l1.34.94-5.81%208.38H9.02L5.78%209.67l1.34-1.25%202.57%202.4z%27%20fill%3D%27%23ffffff%27%2F%3E%3C%2Fsvg%3E");
+}
+
+.hab-settings .hab-grid input[type="checkbox"]:focus {
+	border-color: var(--hab-accent);
+	box-shadow: 0 0 0 1px var(--hab-accent);
+}
